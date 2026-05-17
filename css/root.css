@@ -25,11 +25,16 @@
   --gold:          #C49840;
   --gold-light:    #DDB95A;
 
-  /* Glass */
-  --glass-bg:      rgba(255, 255, 255, 0.07);
-  --glass-bg-dark: rgba(13, 31, 20, 0.55);
-  --glass-border:  rgba(255, 255, 255, 0.14);
-  --glass-blur:    blur(16px);
+  /* Liquid Glass System
+     Directional gradient mimics light hitting glass at an angle.
+     Blur kept at 6px — restrained, readable, not foggy.
+     No SVG displacement filters — cross-browser safe. */
+  --glass-bg:        linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02));
+  --glass-bg-dark:   linear-gradient(135deg, rgba(13, 31, 20, 0.65), rgba(13, 31, 20, 0.30));
+  --glass-border:    rgba(255, 255, 255, 0.22);
+  --glass-blur:      blur(6px);
+  --glass-shadow:    0 8px 32px rgba(0, 0, 0, 0.14), inset 0 1px 2px rgba(255, 255, 255, 0.18);
+  --glass-highlight: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, transparent 45%);
 
   /* Text */
   --text-dark:     #1A1A18;
@@ -240,4 +245,44 @@ body {
 @keyframes pageFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* ── VIEW TRANSITIONS API ────────────────────────────────────── */
+/*
+   Single rule enables seamless cross-page fade on all browsers
+   that support it (Chrome, Edge, Safari 18.2+, Firefox).
+   Browsers without support simply navigate normally — no breakage.
+*/
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: vtFadeOut 0.32s var(--ease-in-out) both;
+}
+
+::view-transition-new(root) {
+  animation: vtFadeIn 0.42s var(--ease-out) both;
+}
+
+@keyframes vtFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes vtFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Nav logo holds its position across pages */
+.nav-logo {
+  view-transition-name: nav-logo;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }

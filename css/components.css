@@ -16,7 +16,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 9999px;
   padding: 0.9rem 2rem;
   transition:
     background var(--t-fast) var(--ease-out),
@@ -118,19 +118,72 @@
 }
 
 /* ── GLASS ───────────────────────────────────────────────────── */
+/*
+   Three-layer liquid glass formula:
+   1. Directional gradient background — mimics angled light on glass
+   2. backdrop-filter blur — the frosted layer
+   3. ::before pseudo — surface specular highlight
+   Transitions on all properties so glass materialises smoothly.
+*/
 
 .glass {
+  position: relative;
+  overflow: hidden;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition:
+    background    var(--t-mid) var(--ease-out),
+    border-color  var(--t-mid) var(--ease-out),
+    box-shadow    var(--t-mid) var(--ease-out),
+    backdrop-filter var(--t-mid) var(--ease-out);
+}
+
+/* Surface specular highlight — the liquid sheen */
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-highlight);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure glass content sits above the highlight layer */
+.glass > * {
+  position: relative;
+  z-index: 1;
 }
 
 .glass-dark {
+  position: relative;
+  overflow: hidden;
   background: var(--glass-bg-dark);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition:
+    background    var(--t-mid) var(--ease-out),
+    border-color  var(--t-mid) var(--ease-out),
+    box-shadow    var(--t-mid) var(--ease-out),
+    backdrop-filter var(--t-mid) var(--ease-out);
+}
+
+.glass-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-dark > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ── BADGE / TAG ─────────────────────────────────────────────── */
@@ -144,7 +197,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 0.3rem 0.85rem;
-  border-radius: 2px;
+  border-radius: 9999px;
 }
 
 .badge-terra {

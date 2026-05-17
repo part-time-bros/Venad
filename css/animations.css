@@ -34,14 +34,34 @@
 .hero-text-reveal.d5 { animation-delay: 0.8s; }
 
 /* ── HERO BACKGROUND PARALLAX ────────────────────────────────── */
+/*
+   Two layers:
+   1. @supports block — true scroll-driven parallax (Chrome, Safari 26+)
+   2. Fallback — initial zoom-out on page load for unsupported browsers
+*/
+
+/* Fallback: simple zoom on load */
+.hero-bg-parallax {
+  animation: heroParallax 1.8s var(--ease-out) both;
+}
 
 @keyframes heroParallax {
   from { transform: scale(1.08); }
   to   { transform: scale(1); }
 }
 
-.hero-bg-parallax {
-  animation: heroParallax 1.8s var(--ease-out) both;
+/* Scroll-driven parallax — overrides fallback where supported */
+@supports (animation-timeline: scroll()) {
+  .hero-bg-parallax {
+    animation: heroScrollParallax linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 100vh;
+  }
+
+  @keyframes heroScrollParallax {
+    from { transform: translateY(0) scale(1.05); }
+    to   { transform: translateY(18%) scale(1.12); }
+  }
 }
 
 /* ── MARQUEE ─────────────────────────────────────────────────── */
@@ -114,13 +134,10 @@
 .reveal.d4 { transition-delay: 0.32s; }
 .reveal.d5 { transition-delay: 0.42s; }
 
-@supports (animation-timeline: view()) {
-  .reveal.d1 { animation-delay: 0.08s; }
-  .reveal.d2 { animation-delay: 0.16s; }
-  .reveal.d3 { animation-delay: 0.24s; }
-  .reveal.d4 { animation-delay: 0.32s; }
-  .reveal.d5 { animation-delay: 0.42s; }
-}
+/* Note: animation-delay stagger intentionally omitted inside @supports.
+   Scroll timelines control sequencing via scroll position, not time.
+   Time-based delays cause unpredictable behaviour with view() timelines.
+   Stagger on the IntersectionObserver fallback (transition-delay above) is kept. */
 
 /* Reveal from left */
 .reveal-left {
