@@ -1,0 +1,277 @@
+/* ============================================================
+   VENAD HOUSE — nav.css
+   Navigation bar and mobile menu.
+   ============================================================ */
+
+/* ── MAIN NAV ────────────────────────────────────────────────── */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 400;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--content-pad);
+  transition:
+    background  var(--t-mid) var(--ease-out),
+    box-shadow  var(--t-mid) var(--ease-out),
+    height      var(--t-mid) var(--ease-out),
+    border-color var(--t-mid) var(--ease-out);
+}
+
+/* Default — transparent over hero */
+.nav {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Scrolled — glass dark */
+.nav.scrolled {
+  height: 64px;
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 32px rgba(0, 0, 0, 0.28);
+}
+
+/* ── LOGO ────────────────────────────────────────────────────── */
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.05em;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.15rem;
+  text-decoration: none;
+  transition: opacity var(--t-fast) var(--ease-out);
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav-logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── DESKTOP LINKS ───────────────────────────────────────────── */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+.nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--t-fast) var(--ease-out);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-light);
+  transition: width var(--t-mid) var(--ease-out);
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #fff;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background: var(--terra);
+}
+
+/* ── BOOK BUTTON ─────────────────────────────────────────────── */
+
+.nav-book {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--terra);
+  padding: 0.65rem 1.5rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition:
+    background var(--t-fast) var(--ease-out),
+    box-shadow var(--t-mid) var(--ease-out),
+    transform  var(--t-mid) var(--ease-out);
+}
+
+.nav-book:hover {
+  background: var(--terra-dark);
+  box-shadow: 0 6px 20px rgba(179, 85, 40, 0.36);
+  transform: translateY(-1px);
+}
+
+/* ── HAMBURGER ───────────────────────────────────────────────── */
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+  border: none;
+  z-index: 420;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #fff;
+  border-radius: 1px;
+  transition: transform var(--t-mid) var(--ease-out), opacity var(--t-fast) var(--ease-out);
+  transform-origin: center;
+}
+
+/* Hamburger open state — becomes X */
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ── MOBILE MENU OVERLAY ─────────────────────────────────────── */
+
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 410;
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+
+  /* Hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity    var(--t-mid) var(--ease-out),
+    visibility var(--t-mid) var(--ease-out);
+}
+
+.nav-mobile.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-mobile-link {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color var(--t-fast) var(--ease-out);
+
+  /* Staggered entry via JS adding .open class */
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    color      var(--t-fast) var(--ease-out),
+    opacity    var(--t-mid)  var(--ease-out),
+    transform  var(--t-mid)  var(--ease-out);
+}
+
+.nav-mobile.open .nav-mobile-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-mobile.open .nav-mobile-link:nth-child(1) { transition-delay: 0.08s; }
+.nav-mobile.open .nav-mobile-link:nth-child(2) { transition-delay: 0.14s; }
+.nav-mobile.open .nav-mobile-link:nth-child(3) { transition-delay: 0.20s; }
+.nav-mobile.open .nav-mobile-link:nth-child(4) { transition-delay: 0.26s; }
+.nav-mobile.open .nav-mobile-link:nth-child(5) { transition-delay: 0.32s; }
+
+.nav-mobile-link:hover {
+  color: #fff;
+}
+
+.nav-mobile-book {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4ade80;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity   var(--t-mid) var(--ease-out),
+    transform var(--t-mid) var(--ease-out);
+}
+
+.nav-mobile.open .nav-mobile-book {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.38s;
+}
+
+.nav-mobile-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-book {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+}
