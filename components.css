@@ -1,0 +1,571 @@
+/* ============================================================
+   VENAD HOUSE — components.css
+   Reusable UI components: buttons, glass, badges, cards.
+   All components use only CSS variables from root.css.
+   ============================================================ */
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 9999px;
+  padding: 0.9rem 2rem;
+  transition:
+    background var(--t-fast) var(--ease-out),
+    color var(--t-fast) var(--ease-out),
+    transform var(--t-mid) var(--ease-out),
+    box-shadow var(--t-mid) var(--ease-out);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary — terracotta fill */
+.btn-primary {
+  background: var(--terra);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--terra-dark);
+  box-shadow: 0 8px 28px rgba(179, 85, 40, 0.32);
+}
+
+/* Secondary — outline */
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Dark outline — for light backgrounds */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--forest);
+  border: 1px solid rgba(13, 31, 20, 0.35);
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--forest);
+  background: rgba(13, 31, 20, 0.04);
+}
+
+/* Ghost — text only with arrow */
+.btn-ghost {
+  background: transparent;
+  color: var(--terra);
+  padding-inline: 0;
+  letter-spacing: 0.16em;
+  position: relative;
+}
+
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--terra);
+  transition: width var(--t-mid) var(--ease-out);
+}
+
+.btn-ghost:hover::after {
+  width: 100%;
+}
+
+.btn-ghost:hover {
+  transform: none;
+}
+
+/* WhatsApp button */
+.btn-wa {
+  background: #25D366;
+  color: #fff;
+}
+
+.btn-wa:hover {
+  background: #1fb855;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.3);
+}
+
+/* Icon inside button */
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* ── GLASS ───────────────────────────────────────────────────── */
+/*
+   Three-layer liquid glass formula:
+   1. Directional gradient background — mimics angled light on glass
+   2. backdrop-filter blur — the frosted layer
+   3. ::before pseudo — surface specular highlight
+   Transitions on all properties so glass materialises smoothly.
+*/
+
+.glass {
+  position: relative;
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition:
+    background    var(--t-mid) var(--ease-out),
+    border-color  var(--t-mid) var(--ease-out),
+    box-shadow    var(--t-mid) var(--ease-out),
+    backdrop-filter var(--t-mid) var(--ease-out);
+}
+
+/* Surface specular highlight — the liquid sheen */
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--glass-highlight);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure glass content sits above the highlight layer */
+.glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-dark {
+  position: relative;
+  overflow: hidden;
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition:
+    background    var(--t-mid) var(--ease-out),
+    border-color  var(--t-mid) var(--ease-out),
+    box-shadow    var(--t-mid) var(--ease-out),
+    backdrop-filter var(--t-mid) var(--ease-out);
+}
+
+.glass-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-dark > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── BADGE / TAG ─────────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+}
+
+.badge-terra {
+  background: var(--terra);
+  color: #fff;
+}
+
+.badge-glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+}
+
+.badge-moss {
+  background: rgba(45, 94, 62, 0.12);
+  color: var(--moss);
+}
+
+/* ── FEATURE TAG ─────────────────────────────────────────────── */
+/* Inline dot-separated feature list — not boxed badges */
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+}
+
+.feature-list li::after {
+  content: '·';
+  margin-inline: 0.6rem;
+  opacity: 0.4;
+}
+
+.feature-list li:last-child::after {
+  display: none;
+}
+
+/* ── PRICE CHIP ──────────────────────────────────────────────── */
+/* Glass chip overlaid on room images */
+
+.price-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0.6rem 1rem;
+  border-radius: 3px;
+}
+
+.price-chip-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.price-chip-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.15rem;
+}
+
+/* ── SECTION LABEL ───────────────────────────────────────────── */
+/* The small uppercase eyebrow above section titles */
+
+.section-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.section-label-terra  { color: var(--terra); }
+.section-label-gold   { color: var(--gold-light); }
+.section-label-sage   { color: var(--sage); }
+
+/* ── DIVIDER LINE ────────────────────────────────────────────── */
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--terra);
+  margin-block: 1.4rem;
+}
+
+.divider-center {
+  margin-inline: auto;
+}
+
+.divider-gold {
+  background: var(--gold);
+}
+
+/* ── WHATSAPP FLOAT ──────────────────────────────────────────── */
+
+.wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 500;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.38);
+  transition: transform var(--t-mid) var(--ease-out), box-shadow var(--t-mid) var(--ease-out);
+  animation: waPulse 3.5s ease infinite;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 36px rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+
+.wa-float svg {
+  fill: #fff;
+  width: 26px;
+  height: 26px;
+}
+
+/* Tooltip on hover */
+.wa-float::before {
+  content: 'Chat with us';
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--glass-bg-dark);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--t-fast) var(--ease-out);
+}
+
+.wa-float:hover::before {
+  opacity: 1;
+}
+
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.38); }
+  50%       { box-shadow: 0 4px 40px rgba(37, 211, 102, 0.58); }
+}
+
+/* ── CUSTOM CURSOR ───────────────────────────────────────────── */
+/* JS in cursor.js adds .cursor-dot to the body */
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--terra);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition:
+    width  0.35s var(--ease-out),
+    height 0.35s var(--ease-out),
+    background 0.35s var(--ease-out),
+    opacity 0.35s var(--ease-out);
+  opacity: 0;
+}
+
+.cursor-dot.visible  { opacity: 1; }
+.cursor-dot.expanded {
+  width: 44px;
+  height: 44px;
+  background: rgba(179, 85, 40, 0.18);
+  border: 1px solid rgba(179, 85, 40, 0.45);
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) {
+  .cursor-dot { display: none; }
+}
+
+/* ── WHATSAPP CONFIRMATION MODAL ─────────────────────────────── */
+
+.wa-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(8, 20, 12, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity    0.35s var(--ease-out),
+    visibility 0.35s var(--ease-out);
+}
+
+.wa-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wa-modal-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(255,255,255,0.04));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 20px;
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.35),
+    0 4px 16px rgba(0,0,0,0.2),
+    inset 0 1px 2px rgba(255,255,255,0.22);
+  padding: 2.2rem 2rem 2rem;
+  text-align: center;
+  transform: translateY(20px) scale(0.96);
+  transition:
+    transform 0.4s var(--ease-out),
+    opacity   0.35s var(--ease-out);
+}
+
+.wa-modal-overlay.open .wa-modal-card {
+  transform: translateY(0) scale(1);
+}
+
+/* Directional surface highlight — the liquid glass sheen */
+.wa-modal-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.16) 0%,
+    rgba(255,255,255,0.04) 35%,
+    transparent 65%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.wa-modal-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.4rem;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+}
+
+.wa-modal-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.3rem;
+}
+
+.wa-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.85rem;
+  line-height: 1.1;
+}
+
+.wa-modal-body {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.wa-modal-body strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
+.wa-modal-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.wa-modal-cancel {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 9999px;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  transition:
+    background 0.25s var(--ease-out),
+    color      0.25s var(--ease-out);
+}
+
+.wa-modal-cancel:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+.wa-modal-confirm {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #25D366;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+  transition:
+    background  0.25s var(--ease-out),
+    box-shadow  0.25s var(--ease-out),
+    transform   0.25s var(--ease-out);
+}
+
+.wa-modal-confirm:hover {
+  background: #1fb855;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-modal-overlay,
+  .wa-modal-card {
+    transition: none;
+  }
+}
