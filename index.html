@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Venad House — A century-old ancestral home on the Alleppey backwaters, Kerala. Experience India the way it was meant to be lived.">
+  <meta property="og:title" content="Venad House | Alleppey, Kerala">
+  <meta property="og:description" content="A century-old ancestral home on the Alleppey backwaters. Experience Kerala the way it was meant to be lived.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80">
+  <title>Venad House | Alleppey Backwaters, Kerala</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Venad House home">
+      Venad House
+      <span class="nav-logo-sub">Alleppey, Kerala</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="rooms.html"       class="nav-link">Rooms</a>
+      <a href="experiences.html" class="nav-link">Experiences</a>
+      <a href="gallery.html"     class="nav-link">Gallery</a>
+      <a href="story.html"       class="nav-link">Our Story</a>
+    </div>
+
+    <a href="contact.html" class="nav-book" onclick="waBook()">Book Now</a>
+
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <a href="rooms.html"       class="nav-mobile-link">Rooms</a>
+    <a href="experiences.html" class="nav-mobile-link">Experiences</a>
+    <a href="gallery.html"     class="nav-mobile-link">Gallery</a>
+    <a href="story.html"       class="nav-mobile-link">Our Story</a>
+    <div class="nav-mobile-divider"></div>
+    <a href="contact.html" class="nav-mobile-book" onclick="waBook()">Reserve a Room &nbsp;&#8599;</a>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+
+  <div class="hero-bg hero-bg-parallax">
+    <img
+      src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1920&q=85"
+      alt="Alleppey backwaters at golden hour — Kerala, India"
+      loading="eager"
+      fetchpriority="high"
+    >
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+
+      <div class="hero-eyebrow hero-text-reveal d1">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Alleppey Backwaters &nbsp;&middot;&nbsp; Est. 1924</span>
+      </div>
+
+      <h1 class="hero-title hero-text-reveal d2">
+        Where the<br>backwaters<br>begin
+      </h1>
+
+      <p class="hero-subtitle hero-text-reveal d3">
+        A century-old Varma family home on the banks of Vembanad Lake. Four rooms, one family, and the whole of Kerala at your door.
+      </p>
+
+      <div class="hero-actions hero-text-reveal d4">
+        <button class="btn btn-primary" onclick="waBook()">
+          <svg class="btn-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reserve Your Stay
+        </button>
+        <a href="#rooms" class="btn btn-outline">Explore Rooms</a>
+      </div>
+
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="hero-scroll-label">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     IDENTITY MARQUEE
+════════════════════════════════════════════════════════════ -->
+<div class="marquee-section" aria-hidden="true">
+  <div class="marquee-outer">
+    <div class="marquee-inner">
+      <!-- Duplicated for seamless loop -->
+      <div class="marquee-item">
+        <span class="marquee-word">Alleppey</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Est. 1924</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Kerala</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Backwaters</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Heritage Home</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Venad House</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Vembanad Lake</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">God's Own Country</span>
+        <span class="marquee-dot"></span>
+      </div>
+      <!-- Duplicate for infinite loop -->
+      <div class="marquee-item" aria-hidden="true">
+        <span class="marquee-word">Alleppey</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Est. 1924</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Kerala</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Backwaters</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Heritage Home</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Venad House</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">Vembanad Lake</span>
+        <span class="marquee-dot"></span>
+        <span class="marquee-word">God's Own Country</span>
+        <span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PHILOSOPHY
+════════════════════════════════════════════════════════════ -->
+<section class="section philosophy-section" id="about">
+  <div class="wrapper">
+    <div class="philosophy-grid">
+
+      <!-- Image -->
+      <div class="philosophy-image-wrap reveal-left">
+        <div class="philosophy-image img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=82"
+            alt="The Varma family home — Venad House, Alleppey"
+            loading="lazy"
+          >
+          <div class="philosophy-image-tag glass">
+            <span class="philosophy-image-tag-year">1924</span>
+            <span class="philosophy-image-tag-label">Laterite &amp; Teak</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="philosophy-text reveal-right">
+        <span class="section-label section-label-terra">Our Story</span>
+        <h2>An ancestral home,<br>open to the world</h2>
+
+        <blockquote class="philosophy-pull-quote">
+          "Not a hotel. A home that happens to have a few empty rooms."
+        </blockquote>
+
+        <p class="philosophy-body">
+          <em>Venad</em> — the ancient Kerala kingdom from which our name comes — once stretched across these very backwaters. The home has stood here since 1924, built from laterite stone and century-old teak by Krishnan Varma, our great-grandfather.
+        </p>
+        <p class="philosophy-body">
+          We opened our doors to guests in 2019. Not because we needed to, but because this place was too good to keep to ourselves. There is no reception desk, no room service, no itinerary handed to you at check-in. Just us, the family, and everything Kerala has to offer outside your window.
+        </p>
+
+        <a href="story.html" class="btn btn-ghost">Read the full story &nbsp;&#8594;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ROOMS TEASER
+════════════════════════════════════════════════════════════ -->
+<section class="section rooms-section" id="rooms">
+  <div class="wrapper">
+
+    <div class="rooms-header reveal">
+      <div>
+        <span class="section-label section-label-terra">Where You'll Rest</span>
+        <h2>Four rooms.<br>Four stories.</h2>
+      </div>
+      <a href="rooms.html" class="btn btn-outline-dark">View All Rooms &nbsp;&#8594;</a>
+    </div>
+
+    <div class="rooms-grid">
+
+      <!-- Room 1: Nadumuttom Suite -->
+      <article class="room-card reveal">
+        <div class="room-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80"
+            alt="Nadumuttom Suite — open courtyard room"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-card-overlay"></div>
+        <div class="price-chip glass room-card-price">
+          <span class="price-chip-amount">&#8377;4,500</span>
+          <span class="price-chip-label">per night</span>
+        </div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Nadumuttom Suite</h3>
+          <p class="room-card-desc">Built around a private open courtyard — the heart of every traditional Kerala home. Morning light falls through a skylight onto original mosaic floors.</p>
+          <a href="rooms.html#nadumuttom" class="room-card-cta">Book this room</a>
+        </div>
+      </article>
+
+      <!-- Room 2: Backwater Villa -->
+      <article class="room-card reveal d1">
+        <div class="room-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=900&q=80"
+            alt="Backwater Villa — waterfront cottage"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-card-overlay"></div>
+        <div class="price-chip glass room-card-price">
+          <span class="price-chip-amount">&#8377;6,500</span>
+          <span class="price-chip-label">per night</span>
+        </div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Backwater Villa</h3>
+          <p class="room-card-desc">A private cottage right on the water's edge. Watch kettuvallams drift past from your verandah as herons wade in the shallows at sunrise.</p>
+          <a href="rooms.html#backwater" class="room-card-cta">Book this room</a>
+        </div>
+      </article>
+
+      <!-- Room 3: Plantation Room -->
+      <article class="room-card reveal d2">
+        <div class="room-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80"
+            alt="Plantation Room — garden and coconut grove view"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-card-overlay"></div>
+        <div class="price-chip glass room-card-price">
+          <span class="price-chip-amount">&#8377;3,200</span>
+          <span class="price-chip-label">per night</span>
+        </div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Plantation Room</h3>
+          <p class="room-card-desc">Surrounded by coconut groves and a fragrant spice garden. Earthy, quiet, beautifully simple — for guests who came here to breathe.</p>
+          <a href="rooms.html#plantation" class="room-card-cta">Book this room</a>
+        </div>
+      </article>
+
+      <!-- Room 4: Heritage Loft -->
+      <article class="room-card reveal d3">
+        <div class="room-card-img">
+          <img
+            src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=900&q=80"
+            alt="Heritage Loft — original 1924 quarters with rosewood beams"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-card-overlay"></div>
+        <div class="price-chip glass room-card-price">
+          <span class="price-chip-amount">&#8377;5,000</span>
+          <span class="price-chip-label">per night</span>
+        </div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Heritage Loft</h3>
+          <p class="room-card-desc">The original 1924 family quarters. Rosewood ceiling beams, antique brass fittings, coir mat flooring — untouched in character, elevated in comfort.</p>
+          <a href="rooms.html#heritage" class="room-card-cta">Book this room</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCES
+════════════════════════════════════════════════════════════ -->
+<section class="section experiences-section" id="experiences">
+  <div class="wrapper">
+
+    <div class="experiences-header reveal">
+      <div>
+        <span class="section-label section-label-gold">Beyond the Room</span>
+        <h2 class="tc-light">The Kerala<br>experience</h2>
+      </div>
+      <p class="experiences-intro">
+        Every morning at Venad House holds a new way to discover God's Own Country — on the water, in the kitchen, or quietly, in the garden.
+      </p>
+    </div>
+
+    <div class="experiences-list reveal">
+
+      <div class="exp-item" onclick="waExperience('Sunrise Kayak')" role="button" tabindex="0" aria-label="Sunrise Kayak experience">
+        <span class="exp-num">01</span>
+        <div class="exp-body">
+          <div class="exp-name">Sunrise Kayak</div>
+          <p class="exp-detail">Paddle through silent canals as dawn breaks over the paddy fields and coconut groves. Herons, kingfishers, and total stillness.</p>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-price">&#8377;800</span>
+          <span class="exp-duration">2 hours</span>
+        </div>
+      </div>
+
+      <div class="exp-item" onclick="waExperience('Kerala Cooking Class')" role="button" tabindex="0" aria-label="Kerala Cooking Class experience">
+        <span class="exp-num">02</span>
+        <div class="exp-body">
+          <div class="exp-name">Kerala Cooking Class</div>
+          <p class="exp-detail">Learn family recipes — fish curry, appam, avial — cooked by Priya on a wood-fired hearth. You leave with the recipes written by hand.</p>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-price">&#8377;1,200</span>
+          <span class="exp-duration">3 hours</span>
+        </div>
+      </div>
+
+      <div class="exp-item" onclick="waExperience('Spice Garden Walk')" role="button" tabindex="0" aria-label="Spice Garden Walk experience">
+        <span class="exp-num">03</span>
+        <div class="exp-body">
+          <div class="exp-name">Spice Garden Walk</div>
+          <p class="exp-detail">Cardamom, pepper, turmeric, vanilla — our garden is a living map of Kerala's spice trade. Our gardener Rajan has tended it for thirty years.</p>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-price">&#8377;400</span>
+          <span class="exp-duration">1 hour</span>
+        </div>
+      </div>
+
+      <div class="exp-item" onclick="waExperience('Kathakali Evening')" role="button" tabindex="0" aria-label="Kathakali Evening experience">
+        <span class="exp-num">04</span>
+        <div class="exp-body">
+          <div class="exp-name">Kathakali Evening</div>
+          <p class="exp-detail">An intimate performance in our central courtyard — makeup, music, storytelling, and movement. Stories from the Mahabharata told in a language older than words.</p>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-price">&#8377;1,500</span>
+          <span class="exp-duration">2 hours</span>
+        </div>
+      </div>
+
+      <div class="exp-item" onclick="waExperience('Houseboat Day Trip')" role="button" tabindex="0" aria-label="Houseboat Day Trip experience">
+        <span class="exp-num">05</span>
+        <div class="exp-body">
+          <div class="exp-name">Houseboat Day Trip</div>
+          <p class="exp-detail">A full day on a private kettuvallam through the Kuttanad backwaters — lunch onboard, fishing stops, and a return home as the sun goes down.</p>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-price">&#8377;4,000</span>
+          <span class="exp-duration">Full day</span>
+        </div>
+      </div>
+
+      <div class="exp-item" onclick="waExperience('Ayurveda Session')" role="button" tabindex="0" aria-label="Ayurveda Session experience">
+        <span class="exp-num">06</span>
+        <div class="exp-body">
+          <div class="exp-name">Ayurveda Session</div>
+          <p class="exp-detail">A traditional treatment by a certified practitioner using oils pressed from our garden herbs. Abhyanga massage, steam, and stillness.</p>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-price">&#8377;2,000</span>
+          <span class="exp-duration">90 mins</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top: 3rem;" class="reveal">
+      <a href="experiences.html" class="btn btn-outline">All Experiences &nbsp;&#8594;</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════════════════════ -->
+<section class="section testimonials-section">
+  <div class="wrapper">
+    <div class="testimonials-inner">
+
+      <div class="testimonials-header reveal">
+        <span class="section-label section-label-terra" style="text-align:center; display:block;">Guest Voices</span>
+        <h2>What our guests say</h2>
+      </div>
+
+      <div class="quote-container reveal">
+
+        <div class="quote-slide active" role="group" aria-label="Testimonial 1 of 3">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p class="quote-text">I have stayed in hotels across India, but nothing compared to waking up at Venad House. The backwater view, the home-cooked breakfast, the family who remembered how I take my tea the next morning. This is what Kerala truly feels like.</p>
+          <div class="quote-author">
+            <div class="quote-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <span class="quote-author-name">Sophie Laurent</span>
+            <span class="quote-author-from">Paris, France &nbsp;&middot;&nbsp; March 2026</span>
+          </div>
+        </div>
+
+        <div class="quote-slide" role="group" aria-label="Testimonial 2 of 3">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p class="quote-text">The cooking class alone was worth the entire trip. Priya taught us her grandmother's fish curry recipe and refused to let us leave without writing it down for us. We came for the backwaters and left having found a family.</p>
+          <div class="quote-author">
+            <div class="quote-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <span class="quote-author-name">Rohan &amp; Priya Mehta</span>
+            <span class="quote-author-from">Mumbai, India &nbsp;&middot;&nbsp; January 2026</span>
+          </div>
+        </div>
+
+        <div class="quote-slide" role="group" aria-label="Testimonial 3 of 3">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <p class="quote-text">The Heritage Loft had the most beautiful wooden ceiling I have ever slept under. No noise — just water, birds, and the sound of the family having breakfast somewhere below. We did not want to leave. We are already planning to return.</p>
+          <div class="quote-author">
+            <div class="quote-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <span class="quote-author-name">James &amp; Fiona Wilson</span>
+            <span class="quote-author-from">Edinburgh, UK &nbsp;&middot;&nbsp; December 2025</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="quote-dots" role="tablist" aria-label="Testimonial navigation">
+        <button class="quote-dot active" aria-label="Testimonial 1" aria-selected="true" data-slide="0"></button>
+        <button class="quote-dot" aria-label="Testimonial 2" aria-selected="false" data-slide="1"></button>
+        <button class="quote-dot" aria-label="Testimonial 3" aria-selected="false" data-slide="2"></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     GALLERY TEASER
+════════════════════════════════════════════════════════════ -->
+<section class="section gallery-section">
+  <div class="wrapper">
+
+    <div class="gallery-header reveal">
+      <div>
+        <span class="section-label section-label-gold">A Glimpse</span>
+        <h2 class="tc-light">Life at Venad House</h2>
+      </div>
+      <a href="gallery.html" class="btn btn-outline">Full Gallery &nbsp;&#8594;</a>
+    </div>
+
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=900&q=80" alt="Alleppey backwaters at golden hour" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=700&q=80" alt="Kerala food on banana leaf" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80" alt="Venad House room interior" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=700&q=80" alt="Sunrise kayak on the backwaters" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=900&q=80" alt="Spices from the garden" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Venad House</a>
+        <span class="footer-logo-sub">Where Kerala Lives</span>
+        <p class="footer-brand-desc">
+          An ancestral home on the Alleppey backwaters, open to travellers who seek more than a room and a bed.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="footer-soc-link" aria-label="Instagram">ig</a>
+          <a href="https://wa.me/919876543210" class="footer-soc-link" aria-label="WhatsApp" style="background:rgba(37,211,102,0.15); color:#4ade80;">wa</a>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <nav aria-label="Explore">
+        <span class="footer-col-head">Explore</span>
+        <a href="rooms.html"       class="footer-link">Rooms &amp; Suites</a>
+        <a href="experiences.html" class="footer-link">Experiences</a>
+        <a href="gallery.html"     class="footer-link">Gallery</a>
+        <a href="story.html"       class="footer-link">Our Story</a>
+      </nav>
+
+      <!-- Nearby -->
+      <nav aria-label="Nearby attractions">
+        <span class="footer-col-head">Nearby</span>
+        <a href="#" class="footer-link">Vembanad Lake</a>
+        <a href="#" class="footer-link">Kumarakom Birds</a>
+        <a href="#" class="footer-link">Marari Beach</a>
+        <a href="#" class="footer-link">Fort Kochi</a>
+        <a href="#" class="footer-link">Kochi Airport</a>
+      </nav>
+
+      <!-- Contact -->
+      <div>
+        <span class="footer-col-head">Contact</span>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9742;</span>
+          <a href="tel:+919876543210" class="footer-contact-text">+91 98765 43210</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9993;</span>
+          <a href="mailto:hello@venadhome.com" class="footer-contact-text">hello@venadhome.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#8982;</span>
+          <span class="footer-contact-text">Alleppey Backwaters,<br>Alappuzha, Kerala 688001</span>
+        </div>
+        <div style="margin-top:1.6rem;">
+          <button class="btn btn-primary" onclick="waBook()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
+            Book via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Venad House, Alappuzha, Kerala</span>
+      <span class="footer-built">Built with care in Kerala</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP FLOAT
+════════════════════════════════════════════════════════════ -->
+<a
+  href="javascript:void(0)"
+  class="wa-float"
+  onclick="waGeneral()"
+  aria-label="Chat with us on WhatsApp"
+  role="button"
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════════ -->
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script>
+  /* ── Testimonial slider ── */
+  (function () {
+    const slides = document.querySelectorAll('.quote-slide');
+    const dots   = document.querySelectorAll('.quote-dot');
+    let current  = 0;
+    let timer    = null;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      dots[current].setAttribute('aria-selected', 'false');
+
+      current = index;
+
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      dots[current].setAttribute('aria-selected', 'true');
+    }
+
+    function next() {
+      goTo((current + 1) % slides.length);
+    }
+
+    function startTimer() {
+      timer = setInterval(next, 5500);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        goTo(i);
+        resetTimer();
+      });
+    });
+
+    startTimer();
+  })();
+
+  /* ── Keyboard support for experience items ── */
+  document.querySelectorAll('.exp-item[tabindex]').forEach(item => {
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        item.click();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
