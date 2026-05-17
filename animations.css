@@ -1,0 +1,277 @@
+/* ============================================================
+   VENAD HOUSE — animations.css
+   All motion and transitions.
+
+   Strategy: CSS scroll-driven animations where supported,
+   IntersectionObserver fallback for Safari/iOS (handled
+   by animations.js which adds .in-view class).
+   ============================================================ */
+
+/* ── PAGE LOAD ───────────────────────────────────────────────── */
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── HERO REVEAL ─────────────────────────────────────────────── */
+/* Clip-path wipe — left to right */
+
+@keyframes clipWipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+.hero-text-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: clipWipe 1.1s var(--ease-out) both;
+}
+
+.hero-text-reveal.d1 { animation-delay: 0.1s; }
+.hero-text-reveal.d2 { animation-delay: 0.25s; }
+.hero-text-reveal.d3 { animation-delay: 0.4s; }
+.hero-text-reveal.d4 { animation-delay: 0.6s; }
+.hero-text-reveal.d5 { animation-delay: 0.8s; }
+
+/* ── HERO BACKGROUND PARALLAX ────────────────────────────────── */
+
+@keyframes heroParallax {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+
+.hero-bg-parallax {
+  animation: heroParallax 1.8s var(--ease-out) both;
+}
+
+/* ── MARQUEE ─────────────────────────────────────────────────── */
+/* Pure CSS infinite scroll — no JS */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── SCROLL REVEALS ──────────────────────────────────────────── */
+/*
+   Default hidden state for all .reveal elements.
+   Two layers:
+   1. @supports block — CSS scroll-driven for modern browsers
+   2. .in-view class  — added by animations.js via IntersectionObserver
+      This is the guaranteed fallback that works on Safari/iOS.
+*/
+
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity   var(--t-slow) var(--ease-out),
+    transform var(--t-slow) var(--ease-out);
+}
+
+/* IntersectionObserver fallback — animations.js adds this class */
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CSS scroll-driven — modern Chrome/Firefox/Edge */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: revealUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 38%;
+    /* Override transition — animation handles it now */
+    transition: none;
+  }
+
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(36px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Stagger delays — applied on elements, work with both methods */
+.reveal.d1 { transition-delay: 0.08s; }
+.reveal.d2 { transition-delay: 0.16s; }
+.reveal.d3 { transition-delay: 0.24s; }
+.reveal.d4 { transition-delay: 0.32s; }
+.reveal.d5 { transition-delay: 0.42s; }
+
+@supports (animation-timeline: view()) {
+  .reveal.d1 { animation-delay: 0.08s; }
+  .reveal.d2 { animation-delay: 0.16s; }
+  .reveal.d3 { animation-delay: 0.24s; }
+  .reveal.d4 { animation-delay: 0.32s; }
+  .reveal.d5 { animation-delay: 0.42s; }
+}
+
+/* Reveal from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity   var(--t-slow) var(--ease-out),
+    transform var(--t-slow) var(--ease-out);
+}
+
+.reveal-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@supports (animation-timeline: view()) {
+  .reveal-left {
+    animation: revealLeft linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 38%;
+    transition: none;
+  }
+
+  @keyframes revealLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+}
+
+/* Reveal from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity   var(--t-slow) var(--ease-out),
+    transform var(--t-slow) var(--ease-out);
+}
+
+.reveal-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@supports (animation-timeline: view()) {
+  .reveal-right {
+    animation: revealRight linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 38%;
+    transition: none;
+  }
+
+  @keyframes revealRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+}
+
+/* ── IMAGE HOVER ─────────────────────────────────────────────── */
+
+.img-hover-wrap {
+  overflow: hidden;
+}
+
+.img-hover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.65s var(--ease-out);
+}
+
+.img-hover-wrap:hover img {
+  transform: scale(1.06);
+}
+
+/* ── SCROLL LINE ─────────────────────────────────────────────── */
+/* Thin animated scroll indicator in hero */
+
+@keyframes scrollPulse {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.scroll-indicator-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  writing-mode: vertical-rl;
+}
+
+.scroll-indicator-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2.4s ease-in-out infinite;
+}
+
+/* ── WHATSAPP PULSE ──────────────────────────────────────────── */
+
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.38); }
+  50%       { box-shadow: 0 4px 44px rgba(37, 211, 102, 0.6); }
+}
+
+/* ── QUOTE SLIDER ────────────────────────────────────────────── */
+
+.quote-slide {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity   0.55s var(--ease-out),
+    transform 0.55s var(--ease-out);
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.quote-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
+}
+
+/* ── PREFERS REDUCED MOTION ──────────────────────────────────── */
+/* Respect the user's OS setting — never override their preference */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+  }
+}
