@@ -48,6 +48,68 @@ function waContact(name = '', dates = '', message = '') {
   window.open(`https://wa.me/${VENAD.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
+function waConfirm(type, name) {
+  let msg = '';
+  if (type === 'room') {
+    msg = `Hi! I'd like to book the ${name} at ${VENAD.name}. Could you please share availability and details?`;
+  } else if (type === 'experience') {
+    msg = `Hi! I'm interested in the ${name} experience at ${VENAD.name}. Could you share more details and availability?`;
+  } else {
+    msg = `Hi! I have a question about the ${name} at ${VENAD.name}.`;
+  }
+
+  const pendingUrl = `https://wa.me/${VENAD.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+  const modal   = document.getElementById('wa-modal');
+  const subject = document.getElementById('wa-modal-subject');
+  const confirm = document.getElementById('wa-modal-confirm');
+  const cancel  = document.getElementById('wa-modal-cancel');
+
+  if (!modal) {
+    // Fallback: no modal on this page, open directly
+    window.open(pendingUrl, '_blank');
+    return;
+  }
+
+  subject.textContent = name || VENAD.name;
+  modal._pendingUrl = pendingUrl;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { if (cancel) cancel.focus(); }, 50);
+}
+
+/* Modal event listeners — initialised once when DOM is ready */
+document.addEventListener('DOMContentLoaded', function () {
+  const modal   = document.getElementById('wa-modal');
+  if (!modal) return;
+
+  const confirm = document.getElementById('wa-modal-confirm');
+  const cancel  = document.getElementById('wa-modal-cancel');
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    modal._pendingUrl = '';
+  }
+
+  confirm.addEventListener('click', () => {
+    if (modal._pendingUrl) window.open(modal._pendingUrl, '_blank');
+    closeModal();
+  });
+
+  cancel.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+});
+
 /*
   ── Firebase stub (Phase 2) ──────────────────────────────────
   When a real client needs form data saved to Firestore,
