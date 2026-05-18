@@ -1,0 +1,543 @@
+/* ============================================================
+   VENAD HOUSE — experiences.css
+   Experiences page specific styles.
+   All variables from root.css.
+   ============================================================ */
+
+/* ── PAGE HERO ───────────────────────────────────────────────── */
+
+.exp-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(3rem, 6vw, 5.5rem);
+  overflow: hidden;
+}
+
+.exp-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.exp-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+/* Gradient — heavier at bottom for text legibility */
+.exp-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 20, 12, 0.92) 0%,
+    rgba(8, 20, 12, 0.55) 40%,
+    rgba(8, 20, 12, 0.18) 75%,
+    rgba(8, 20, 12, 0.06) 100%
+  );
+}
+
+.exp-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--content-pad);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.exp-hero-text {
+  max-width: 680px;
+}
+
+.exp-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.exp-hero-eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.65;
+}
+
+.exp-hero-eyebrow-text {
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.exp-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3.2rem, 9vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 1.6rem;
+}
+
+.exp-hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 440px;
+}
+
+/* Scroll indicator right column */
+.exp-hero-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+.exp-hero-scroll-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  writing-mode: vertical-rl;
+}
+
+.exp-hero-scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollPulse 2.6s ease-in-out infinite;
+}
+
+/* ── INTRO STRIP ─────────────────────────────────────────────── */
+
+.exp-intro-strip {
+  background: var(--forest);
+  padding: clamp(2rem, 4vw, 3rem) var(--content-pad);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.exp-intro-strip-inner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  gap: clamp(2rem, 4vw, 5rem);
+  align-items: center;
+}
+
+.exp-intro-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.3;
+  justify-self: center;
+}
+
+.exp-intro-left {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+
+.exp-intro-right {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.8;
+}
+
+/* ── EXPERIENCE SECTIONS ─────────────────────────────────────── */
+
+.experience-section {
+  padding-block: var(--section-y);
+  border-bottom: 1px solid rgba(13,31,20,0.07);
+  position: relative;
+}
+
+.experience-section:nth-child(odd) {
+  background: var(--cream);
+}
+
+.experience-section:nth-child(even) {
+  background: var(--linen);
+}
+
+.experience-layout {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--content-pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+
+/* Alternate image position */
+.experience-section:nth-child(even) .experience-layout {
+  direction: rtl;
+}
+
+.experience-layout > * {
+  direction: ltr;
+}
+
+/* ── EXPERIENCE IMAGE ────────────────────────────────────────── */
+
+.experience-image-wrap {
+  position: relative;
+}
+
+.experience-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 4 / 5;
+}
+
+.experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.experience-image:hover img {
+  transform: scale(1.04);
+}
+
+/* Large number watermark over image */
+.experience-image-num {
+  position: absolute;
+  bottom: -0.5rem;
+  right: -1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--forest);
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+/* Meta pill — duration + price floating on image */
+.experience-meta-chip {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  z-index: 3;
+  padding: 0.65rem 1.1rem;
+  border-radius: 2px;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.experience-meta-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+}
+
+.experience-meta-sep {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.25);
+}
+
+.experience-meta-duration {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── EXPERIENCE TEXT ─────────────────────────────────────────── */
+
+.experience-text {
+  padding-block: 1rem;
+}
+
+.experience-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.2;
+  line-height: 1;
+  display: block;
+  margin-bottom: -0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.experience-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.45rem;
+}
+
+.experience-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--terra);
+  margin-bottom: 1.5rem;
+}
+
+.experience-divider {
+  width: 36px;
+  height: 1px;
+  background: var(--terra);
+  margin-bottom: 1.5rem;
+}
+
+.experience-description {
+  font-size: 0.93rem;
+  color: var(--text-soft);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+/* What's included list */
+.experience-includes {
+  margin-bottom: 2rem;
+}
+
+.experience-includes-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.experience-includes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.experience-include-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.experience-include-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* CTA area */
+.experience-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(13,31,20,0.1);
+  flex-wrap: wrap;
+}
+
+/* ── CUSTOM REQUEST ──────────────────────────────────────────── */
+
+.exp-custom {
+  background: var(--canopy);
+  padding: var(--section-y) var(--content-pad);
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-custom::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.038;
+  pointer-events: none;
+}
+
+.exp-custom > * {
+  position: relative;
+  z-index: 1;
+}
+
+.exp-custom-inner {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.exp-custom-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.exp-custom-body {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+/* Custom request form */
+.exp-custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.exp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.exp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.exp-form-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+
+.exp-form-input,
+.exp-form-select,
+.exp-form-textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.86rem;
+  color: #fff;
+  outline: none;
+  transition:
+    border-color var(--t-fast) var(--ease-out),
+    background   var(--t-fast) var(--ease-out);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.exp-form-input::placeholder,
+.exp-form-textarea::placeholder {
+  color: rgba(255,255,255,0.28);
+}
+
+.exp-form-select option {
+  background: var(--forest);
+  color: #fff;
+}
+
+.exp-form-input:focus,
+.exp-form-select:focus,
+.exp-form-textarea:focus {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.1);
+}
+
+.exp-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.exp-form-submit {
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .exp-intro-strip-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .exp-intro-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-hero-scroll {
+    display: none;
+  }
+
+  .experience-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .experience-section:nth-child(even) .experience-layout {
+    direction: ltr;
+  }
+
+  .experience-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .exp-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience-image-num {
+    font-size: 6rem;
+  }
+}
