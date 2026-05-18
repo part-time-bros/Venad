@@ -1,0 +1,500 @@
+/* ============================================================
+   VENAD HOUSE — rooms.css
+   Rooms & Suites page specific styles.
+   All variables from root.css.
+   ============================================================ */
+
+/* ── PAGE HERO ───────────────────────────────────────────────── */
+
+.rooms-hero {
+  position: relative;
+  height: 62vh;
+  min-height: 420px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+/* Left panel — text */
+.rooms-hero-text {
+  position: relative;
+  z-index: 2;
+  background: var(--forest);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  padding-top: calc(var(--nav-h) + 2rem);
+}
+
+.rooms-hero-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.038;
+  pointer-events: none;
+}
+
+.rooms-hero-text > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rooms-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.rooms-hero-eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.65;
+}
+
+.rooms-hero-eyebrow-text {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.rooms-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.4rem;
+}
+
+.rooms-hero-desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+  max-width: 340px;
+}
+
+/* Right panel — image */
+.rooms-hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.rooms-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  animation: heroParallax 1.8s var(--ease-out) both;
+}
+
+/* Thin gold vertical seam between panels */
+.rooms-hero::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.25;
+  z-index: 3;
+}
+
+/* ── STICKY SUB-NAV ──────────────────────────────────────────── */
+
+.rooms-subnav {
+  position: sticky;
+  top: 64px; /* sits below scrolled nav height */
+  z-index: 300;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(13,31,20,0.1);
+  transition: box-shadow var(--t-mid) var(--ease-out);
+}
+
+.rooms-subnav.shadowed {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.rooms-subnav-inner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--content-pad);
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.rooms-subnav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.rooms-subnav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  text-decoration: none;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition:
+    color        var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.rooms-subnav-link:hover {
+  color: var(--forest);
+}
+
+.rooms-subnav-link.active {
+  color: var(--terra);
+  border-bottom-color: var(--terra);
+}
+
+.rooms-subnav-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.72rem;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* ── ROOM SECTIONS ───────────────────────────────────────────── */
+
+.room-section {
+  padding-block: var(--section-y);
+  border-bottom: 1px solid rgba(13,31,20,0.07);
+}
+
+.room-section:nth-child(even) {
+  background: var(--linen);
+}
+
+.room-section:nth-child(odd) {
+  background: var(--cream);
+}
+
+/* Alternating layout grid */
+.room-layout {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--content-pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+/* Odd rooms: image left, text right */
+.room-section:nth-child(odd) .room-layout {
+  direction: ltr;
+}
+
+/* Even rooms: image right, text left */
+.room-section:nth-child(even) .room-layout {
+  direction: rtl;
+}
+
+.room-layout > * {
+  direction: ltr;
+}
+
+/* ── ROOM IMAGE BLOCK ────────────────────────────────────────── */
+
+.room-images {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Primary image — large */
+.room-img-primary {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+}
+
+.room-img-primary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.room-img-primary:hover img {
+  transform: scale(1.04);
+}
+
+/* Secondary images — two small side by side */
+.room-img-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.room-img-secondary-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  border-radius: 2px;
+}
+
+.room-img-secondary-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.room-img-secondary-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ── ROOM TEXT BLOCK ─────────────────────────────────────────── */
+
+.room-text {
+  padding-top: 0.5rem;
+}
+
+.room-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: -1rem;
+  display: block;
+  letter-spacing: -0.02em;
+}
+
+.room-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1.08;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.room-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--terra);
+  margin-bottom: 1.6rem;
+}
+
+.room-divider {
+  width: 36px;
+  height: 1px;
+  background: var(--terra);
+  margin-bottom: 1.6rem;
+}
+
+.room-description {
+  font-size: 0.93rem;
+  color: var(--text-soft);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+/* Dot-separated feature list */
+.room-features {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 2.2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(13,31,20,0.1);
+}
+
+.room-feature {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  letter-spacing: 0.05em;
+}
+
+.room-feature::after {
+  content: '·';
+  margin-inline: 0.65rem;
+  color: var(--gold);
+  opacity: 0.6;
+}
+
+.room-feature:last-child::after {
+  display: none;
+}
+
+/* Price block */
+.room-price-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.room-price-wrap {}
+
+.room-price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--forest);
+  line-height: 1;
+  display: block;
+}
+
+.room-price-note {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.room-price-tax {
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  opacity: 0.65;
+  margin-top: 0.15rem;
+  display: block;
+}
+
+.room-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: flex-end;
+}
+
+/* ── NOT SURE CTA ────────────────────────────────────────────── */
+
+.rooms-help {
+  background: var(--forest);
+  padding: clamp(3rem, 5vw, 4.5rem) var(--content-pad);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rooms-help::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.038;
+  pointer-events: none;
+}
+
+.rooms-help > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rooms-help-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.rooms-help-text {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  max-width: 420px;
+  margin: 0 auto 2rem;
+  line-height: 1.75;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .rooms-hero {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .rooms-hero-text {
+    padding-top: calc(var(--nav-h) + 2.5rem);
+    padding-bottom: 2.5rem;
+    min-height: 50vh;
+  }
+
+  .rooms-hero-image {
+    height: 40vw;
+    min-height: 220px;
+  }
+
+  .rooms-hero::after {
+    display: none;
+  }
+
+  .rooms-subnav {
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Reset RTL for mobile — always image first */
+  .room-section:nth-child(even) .room-layout {
+    direction: ltr;
+  }
+
+  .room-cta-group {
+    align-items: flex-start;
+  }
+
+  .room-price-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rooms-subnav-link {
+    padding: 0.9rem 1rem;
+    font-size: 0.62rem;
+  }
+
+  .room-img-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .room-img-secondary-item {
+    aspect-ratio: 16 / 9;
+  }
+}
