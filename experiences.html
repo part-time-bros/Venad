@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Six ways to experience Kerala at Venad House — sunrise kayak, cooking classes, Kathakali, Ayurveda, spice walks and houseboat days on the Alleppey backwaters.">
+  <meta property="og:title" content="Experiences | Venad House, Alleppey">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=80">
+  <title>Experiences | Venad House</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/experiences.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Venad House home">
+      Venad House
+      <span class="nav-logo-sub">Alleppey, Kerala</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="rooms.html"       class="nav-link">Rooms</a>
+      <a href="experiences.html" class="nav-link active">Experiences</a>
+      <a href="gallery.html"     class="nav-link">Gallery</a>
+      <a href="story.html"       class="nav-link">Our Story</a>
+    </div>
+
+    <button type="button" class="nav-book" onclick="waBook()">Book Now</button>
+
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <a href="rooms.html"       class="nav-mobile-link">Rooms</a>
+    <a href="experiences.html" class="nav-mobile-link">Experiences</a>
+    <a href="gallery.html"     class="nav-mobile-link">Gallery</a>
+    <a href="story.html"       class="nav-mobile-link">Our Story</a>
+    <div class="nav-mobile-divider"></div>
+    <button type="button" class="nav-mobile-book" onclick="waBook()">Reserve a Room &nbsp;&#8599;</button>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="exp-hero" aria-label="Experiences hero">
+
+  <div class="exp-hero-bg hero-bg-parallax">
+    <img
+      src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1920&q=85"
+      alt="Sunrise kayak on the Alleppey backwaters"
+      loading="eager"
+      fetchpriority="high"
+    >
+  </div>
+
+  <div class="exp-hero-content">
+    <div class="exp-hero-text">
+      <div class="exp-hero-eyebrow hero-text-reveal d1">
+        <div class="exp-hero-eyebrow-line"></div>
+        <span class="exp-hero-eyebrow-text">Six experiences &nbsp;&middot;&nbsp; One Kerala</span>
+      </div>
+      <h1 class="exp-hero-title hero-text-reveal d2">
+        Every<br>morning,<br>something<br>different
+      </h1>
+      <p class="exp-hero-subtitle hero-text-reveal d3">
+        The real Kerala is not inside the room. These are the mornings, afternoons, and evenings that will stay with you long after you leave.
+      </p>
+    </div>
+
+    <div class="exp-hero-scroll" aria-hidden="true">
+      <span class="exp-hero-scroll-label">Scroll</span>
+      <div class="exp-hero-scroll-line"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     INTRO STRIP
+════════════════════════════════════════════════════════════ -->
+<div class="exp-intro-strip">
+  <div class="exp-intro-strip-inner wrapper">
+    <p class="exp-intro-left reveal">
+      "We do not offer packages. Every experience at Venad House is arranged personally, on your time, at your pace."
+    </p>
+    <div class="exp-intro-divider" aria-hidden="true"></div>
+    <p class="exp-intro-right reveal">
+      All experiences are available as add-ons to any room booking. Some can be arranged on the day — others, like the Kathakali Evening and the Houseboat Day Trip, need a little notice. WhatsApp us and we will sort everything.
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE 01 — SUNRISE KAYAK
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section" id="kayak" aria-label="Sunrise Kayak experience">
+  <div class="experience-layout">
+
+    <div class="experience-image-wrap reveal-left">
+      <div class="experience-image img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=900&q=82"
+          alt="Sunrise kayak through the Alleppey backwater canals"
+          loading="lazy"
+        >
+        <div class="experience-meta-chip glass">
+          <span class="experience-meta-price">&#8377;800</span>
+          <div class="experience-meta-sep" aria-hidden="true"></div>
+          <span class="experience-meta-duration">2 Hours</span>
+        </div>
+      </div>
+      <span class="experience-image-num" aria-hidden="true">01</span>
+    </div>
+
+    <div class="experience-text reveal-right">
+      <span class="experience-number" aria-hidden="true">01</span>
+      <h2 class="experience-name">Sunrise Kayak</h2>
+      <p class="experience-tagline">The backwaters before the world wakes</p>
+      <div class="experience-divider" aria-hidden="true"></div>
+
+      <p class="experience-description">
+        Set out at first light, when the canal surface is still as glass and the only sound is your paddle and the distant call of a kingfisher. The narrow waterways that branch off Vembanad Lake are inaccessible by houseboat — this is the only way to see them.
+      </p>
+      <p class="experience-description">
+        Our guide Biju has paddled these canals since he was twelve. He knows where the otters sleep, where the lotus beds bloom in March, and exactly where to stop so the rising sun catches the paddy fields at the right angle.
+      </p>
+
+      <div class="experience-includes">
+        <span class="experience-includes-label">What&#8217;s included</span>
+        <ul class="experience-includes-list" aria-label="What is included">
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Single kayak or tandem — your choice
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Guided by Biju through the narrow canal network
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Fresh coconut water on return
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Best between October and March
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-cta">
+        <button class="btn btn-primary" onclick="waConfirm('experience', 'Sunrise Kayak')">
+          Book This Experience
+        </button>
+        <span style="font-size:0.75rem; color:var(--text-soft);">&#8377;800 per person</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE 02 — KERALA COOKING CLASS
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section" id="cooking" aria-label="Kerala Cooking Class experience">
+  <div class="experience-layout">
+
+    <div class="experience-image-wrap reveal-right">
+      <div class="experience-image img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=900&q=82"
+          alt="Kerala cooking class — fish curry and appam on a banana leaf"
+          loading="lazy"
+        >
+        <div class="experience-meta-chip glass">
+          <span class="experience-meta-price">&#8377;1,200</span>
+          <div class="experience-meta-sep" aria-hidden="true"></div>
+          <span class="experience-meta-duration">3 Hours</span>
+        </div>
+      </div>
+      <span class="experience-image-num" aria-hidden="true">02</span>
+    </div>
+
+    <div class="experience-text reveal-left">
+      <span class="experience-number" aria-hidden="true">02</span>
+      <h2 class="experience-name">Kerala Cooking Class</h2>
+      <p class="experience-tagline">The recipes that never leave the family</p>
+      <div class="experience-divider" aria-hidden="true"></div>
+
+      <p class="experience-description">
+        Priya Varma has been cooking on this wood-fired hearth since she was eight years old, watching her mother, who watched her grandmother. The recipes she teaches are not from a book. They are the ones the family eats every day.
+      </p>
+      <p class="experience-description">
+        You will learn to make fish curry from the morning catch, soft appam from fermented rice batter, and avial — the Kerala vegetable dish that every family makes differently. You eat what you cook on a fresh banana leaf in the courtyard.
+      </p>
+
+      <div class="experience-includes">
+        <span class="experience-includes-label">What&#8217;s included</span>
+        <ul class="experience-includes-list" aria-label="What is included">
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Three dishes: fish curry, appam, avial
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Handwritten recipe card to take home
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Meal served on banana leaf in the courtyard
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Maximum 4 guests per session
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-cta">
+        <button class="btn btn-primary" onclick="waConfirm('experience', 'Kerala Cooking Class')">
+          Book This Experience
+        </button>
+        <span style="font-size:0.75rem; color:var(--text-soft);">&#8377;1,200 per person</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE 03 — SPICE GARDEN WALK
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section" id="spice" aria-label="Spice Garden Walk experience">
+  <div class="experience-layout">
+
+    <div class="experience-image-wrap reveal-left">
+      <div class="experience-image img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=900&q=82"
+          alt="Spice garden — cardamom, pepper and turmeric at Venad House"
+          loading="lazy"
+        >
+        <div class="experience-meta-chip glass">
+          <span class="experience-meta-price">&#8377;400</span>
+          <div class="experience-meta-sep" aria-hidden="true"></div>
+          <span class="experience-meta-duration">1 Hour</span>
+        </div>
+      </div>
+      <span class="experience-image-num" aria-hidden="true">03</span>
+    </div>
+
+    <div class="experience-text reveal-right">
+      <span class="experience-number" aria-hidden="true">03</span>
+      <h2 class="experience-name">Spice Garden Walk</h2>
+      <p class="experience-tagline">Kerala through its oldest trade</p>
+      <div class="experience-divider" aria-hidden="true"></div>
+
+      <p class="experience-description">
+        The garden behind the house has been growing spices since before the house was built. Rajan — who has tended it for thirty years and knows every plant by name — will walk you through cardamom, black pepper, turmeric, vanilla, and a dozen things you have used in your kitchen your entire life without ever seeing growing.
+      </p>
+      <p class="experience-description">
+        Kerala was the origin of the global spice trade. Standing in this garden, that history is not abstract — it is in the soil under your feet and the scent in the morning air.
+      </p>
+
+      <div class="experience-includes">
+        <span class="experience-includes-label">What&#8217;s included</span>
+        <ul class="experience-includes-list" aria-label="What is included">
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Guided walk with Rajan through the full garden
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Taste fresh spices at source
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Small spice packet to take home
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Available every morning — no advance notice needed
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-cta">
+        <button class="btn btn-primary" onclick="waConfirm('experience', 'Spice Garden Walk')">
+          Book This Experience
+        </button>
+        <span style="font-size:0.75rem; color:var(--text-soft);">&#8377;400 per person</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE 04 — KATHAKALI EVENING
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section" id="kathakali" aria-label="Kathakali Evening experience">
+  <div class="experience-layout">
+
+    <div class="experience-image-wrap reveal-right">
+      <div class="experience-image img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1604423026493-095b82c9c7c3?w=900&q=82"
+          alt="Kathakali performer in full costume and makeup"
+          loading="lazy"
+        >
+        <div class="experience-meta-chip glass">
+          <span class="experience-meta-price">&#8377;1,500</span>
+          <div class="experience-meta-sep" aria-hidden="true"></div>
+          <span class="experience-meta-duration">2 Hours</span>
+        </div>
+      </div>
+      <span class="experience-image-num" aria-hidden="true">04</span>
+    </div>
+
+    <div class="experience-text reveal-left">
+      <span class="experience-number" aria-hidden="true">04</span>
+      <h2 class="experience-name">Kathakali Evening</h2>
+      <p class="experience-tagline">A thousand years of storytelling, in your courtyard</p>
+      <div class="experience-divider" aria-hidden="true"></div>
+
+      <p class="experience-description">
+        Kathakali is one of the oldest classical performance traditions in the world — a language of gesture, colour, and music that tells stories from the Mahabharata and Ramayana. It takes performers years to master the vocabulary of hand movements alone.
+      </p>
+      <p class="experience-description">
+        We arrange an intimate evening in the <em>nadumuttom</em> courtyard. You watch the makeup being applied — a ritual that takes over an hour — before the performance begins by brass oil lamp light. The artist will introduce each gesture and what it means before performing it.
+      </p>
+
+      <div class="experience-includes">
+        <span class="experience-includes-label">What&#8217;s included</span>
+        <ul class="experience-includes-list" aria-label="What is included">
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Full makeup application to observe — 60 minutes
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Intimate 45-minute performance
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Artist introduction and gesture explanation
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Requires 48 hours advance notice
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-cta">
+        <button class="btn btn-primary" onclick="waConfirm('experience', 'Kathakali Evening')">
+          Book This Experience
+        </button>
+        <span style="font-size:0.75rem; color:var(--text-soft);">&#8377;1,500 per person</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE 05 — HOUSEBOAT DAY TRIP
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section" id="houseboat" aria-label="Houseboat Day Trip experience">
+  <div class="experience-layout">
+
+    <div class="experience-image-wrap reveal-left">
+      <div class="experience-image img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=900&q=82"
+          alt="Traditional kettuvallam houseboat on the Kerala backwaters"
+          loading="lazy"
+        >
+        <div class="experience-meta-chip glass">
+          <span class="experience-meta-price">&#8377;4,000</span>
+          <div class="experience-meta-sep" aria-hidden="true"></div>
+          <span class="experience-meta-duration">Full Day</span>
+        </div>
+      </div>
+      <span class="experience-image-num" aria-hidden="true">05</span>
+    </div>
+
+    <div class="experience-text reveal-right">
+      <span class="experience-number" aria-hidden="true">05</span>
+      <h2 class="experience-name">Houseboat Day Trip</h2>
+      <p class="experience-tagline">The whole backwater system, yours for a day</p>
+      <div class="experience-divider" aria-hidden="true"></div>
+
+      <p class="experience-description">
+        A private <em>kettuvallam</em> — the traditional rice-boat of Kerala, built entirely from bamboo and coir rope — for an entire day on Vembanad Lake and the Kuttanad backwaters. No fixed route, no group, no schedule.
+      </p>
+      <p class="experience-description">
+        Lunch is prepared onboard by the boat's cook — fresh Kerala fish curry, rice, and whatever was at the morning market. Stop at a village, try fishing with the locals, or simply drift through the paddy fields watching the light change. Return to Venad House as the sun sets over the water.
+      </p>
+
+      <div class="experience-includes">
+        <span class="experience-includes-label">What&#8217;s included</span>
+        <ul class="experience-includes-list" aria-label="What is included">
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Private kettuvallam for up to 4 guests
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Full Kerala lunch prepared onboard
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Experienced captain and cook
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Departure and return from Venad House jetty
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-cta">
+        <button class="btn btn-primary" onclick="waConfirm('experience', 'Houseboat Day Trip')">
+          Book This Experience
+        </button>
+        <span style="font-size:0.75rem; color:var(--text-soft);">&#8377;4,000 per boat (up to 4 guests)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     EXPERIENCE 06 — AYURVEDA SESSION
+════════════════════════════════════════════════════════════ -->
+<section class="experience-section" id="ayurveda" aria-label="Ayurveda Session experience">
+  <div class="experience-layout">
+
+    <div class="experience-image-wrap reveal-right">
+      <div class="experience-image img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=82"
+          alt="Ayurveda treatment with warm herbal oils"
+          loading="lazy"
+        >
+        <div class="experience-meta-chip glass">
+          <span class="experience-meta-price">&#8377;2,000</span>
+          <div class="experience-meta-sep" aria-hidden="true"></div>
+          <span class="experience-meta-duration">90 Mins</span>
+        </div>
+      </div>
+      <span class="experience-image-num" aria-hidden="true">06</span>
+    </div>
+
+    <div class="experience-text reveal-left">
+      <span class="experience-number" aria-hidden="true">06</span>
+      <h2 class="experience-name">Ayurveda Session</h2>
+      <p class="experience-tagline">Kerala medicine, practised for three thousand years</p>
+      <div class="experience-divider" aria-hidden="true"></div>
+
+      <p class="experience-description">
+        Kerala is the home of authentic Ayurveda — not the spa version, but the real medical tradition that has been practised here for three thousand years. We work with a certified practitioner from a traditional Kerala Ayurveda family.
+      </p>
+      <p class="experience-description">
+        The session begins with a brief consultation to understand your constitution, followed by an <em>abhyanga</em> full-body massage using warm oils pressed from herbs grown in our garden. It ends with a herbal steam treatment. Most guests sleep for the rest of the afternoon.
+      </p>
+
+      <div class="experience-includes">
+        <span class="experience-includes-label">What&#8217;s included</span>
+        <ul class="experience-includes-list" aria-label="What is included">
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Brief constitution consultation
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Abhyanga full-body oil massage — 60 minutes
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Herbal steam treatment
+          </li>
+          <li class="experience-include-item">
+            <span class="experience-include-dot" aria-hidden="true"></span>
+            Requires 24 hours advance notice
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-cta">
+        <button class="btn btn-primary" onclick="waConfirm('experience', 'Ayurveda Session')">
+          Book This Experience
+        </button>
+        <span style="font-size:0.75rem; color:var(--text-soft);">&#8377;2,000 per person</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     CUSTOM REQUEST
+════════════════════════════════════════════════════════════ -->
+<section class="exp-custom" aria-label="Custom experience request">
+  <div class="exp-custom-inner">
+    <h2 class="exp-custom-title reveal">
+      Something else in mind?
+    </h2>
+    <p class="exp-custom-body reveal">
+      Tell us what you are looking for. A village walk, a fishing morning, a visit to a local temple — if it is possible in Kerala, we will try to arrange it.
+    </p>
+
+    <form class="exp-custom-form reveal" id="exp-custom-form" novalidate aria-label="Custom experience request form">
+      <div class="exp-form-row">
+        <div class="exp-form-group">
+          <label class="exp-form-label" for="exp-name">Your Name</label>
+          <input class="exp-form-input" type="text" id="exp-name" name="name" placeholder="First name" autocomplete="given-name">
+        </div>
+        <div class="exp-form-group">
+          <label class="exp-form-label" for="exp-dates">Arrival Dates</label>
+          <input class="exp-form-input" type="text" id="exp-dates" name="dates" placeholder="e.g. 15–20 January">
+        </div>
+      </div>
+      <div class="exp-form-group">
+        <label class="exp-form-label" for="exp-interest">Which experience are you closest to?</label>
+        <select class="exp-form-select" id="exp-interest" name="interest">
+          <option value="" disabled selected>Select one</option>
+          <option value="Sunrise Kayak">Sunrise Kayak</option>
+          <option value="Kerala Cooking Class">Kerala Cooking Class</option>
+          <option value="Spice Garden Walk">Spice Garden Walk</option>
+          <option value="Kathakali Evening">Kathakali Evening</option>
+          <option value="Houseboat Day Trip">Houseboat Day Trip</option>
+          <option value="Ayurveda Session">Ayurveda Session</option>
+          <option value="Something else entirely">Something else entirely</option>
+        </select>
+      </div>
+      <div class="exp-form-group">
+        <label class="exp-form-label" for="exp-message">Tell us more</label>
+        <textarea class="exp-form-textarea" id="exp-message" name="message" placeholder="What are you hoping for? Any special occasion? How many guests?"></textarea>
+      </div>
+      <button type="button" class="btn btn-primary exp-form-submit" id="exp-form-submit">
+        Send via WhatsApp &nbsp;&#8599;
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Venad House</a>
+        <span class="footer-logo-sub">Where Kerala Lives</span>
+        <p class="footer-brand-desc">
+          An ancestral home on the Alleppey backwaters, open to travellers who seek more than a room and a bed.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="footer-soc-link" aria-label="Instagram">ig</a>
+          <a href="https://wa.me/919876543210" class="footer-soc-link" aria-label="WhatsApp" style="background:rgba(37,211,102,0.15); color:#4ade80;">wa</a>
+        </div>
+      </div>
+
+      <nav aria-label="Explore">
+        <span class="footer-col-head">Explore</span>
+        <a href="rooms.html"       class="footer-link">Rooms &amp; Suites</a>
+        <a href="experiences.html" class="footer-link">Experiences</a>
+        <a href="gallery.html"     class="footer-link">Gallery</a>
+        <a href="story.html"       class="footer-link">Our Story</a>
+      </nav>
+
+      <nav aria-label="Nearby attractions">
+        <span class="footer-col-head">Nearby</span>
+        <a href="#" class="footer-link">Vembanad Lake</a>
+        <a href="#" class="footer-link">Kumarakom Birds</a>
+        <a href="#" class="footer-link">Marari Beach</a>
+        <a href="#" class="footer-link">Fort Kochi</a>
+        <a href="#" class="footer-link">Kochi Airport</a>
+      </nav>
+
+      <div>
+        <span class="footer-col-head">Contact</span>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9742;</span>
+          <a href="tel:+919876543210" class="footer-contact-text">+91 98765 43210</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9993;</span>
+          <a href="mailto:hello@venadhome.com" class="footer-contact-text">hello@venadhome.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#8982;</span>
+          <span class="footer-contact-text">Alleppey Backwaters,<br>Alappuzha, Kerala 688001</span>
+        </div>
+        <div style="margin-top:1.6rem;">
+          <button class="btn btn-primary" onclick="waBook()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
+            Book via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Venad House, Alappuzha, Kerala</span>
+      <span class="footer-built">Built with care in Kerala</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP FLOAT
+════════════════════════════════════════════════════════════ -->
+<a href="javascript:void(0)" class="wa-float" onclick="waGeneral()" aria-label="Chat on WhatsApp" role="button">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP CONFIRMATION MODAL
+════════════════════════════════════════════════════════════ -->
+<div class="wa-modal-overlay" id="wa-modal" role="dialog" aria-modal="true" aria-label="WhatsApp confirmation" aria-hidden="true">
+  <div class="wa-modal-card">
+    <div class="wa-modal-shine" aria-hidden="true"></div>
+    <div class="wa-modal-icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </div>
+    <p class="wa-modal-eyebrow">You&#8217;re about to open</p>
+    <h3 class="wa-modal-title">WhatsApp</h3>
+    <p class="wa-modal-body">We&#8217;ll start a conversation about <strong id="wa-modal-subject">your enquiry</strong>. You can close WhatsApp anytime.</p>
+    <div class="wa-modal-actions">
+      <button class="wa-modal-cancel" id="wa-modal-cancel" aria-label="Cancel">Cancel</button>
+      <button class="wa-modal-confirm" id="wa-modal-confirm" aria-label="Continue to WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Continue
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════════ -->
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script>
+(function () {
+
+  /* ── Custom request form → WhatsApp ── */
+  document.getElementById('exp-form-submit').addEventListener('click', function () {
+    const name     = document.getElementById('exp-name').value.trim();
+    const dates    = document.getElementById('exp-dates').value.trim();
+    const interest = document.getElementById('exp-interest').value;
+    const message  = document.getElementById('exp-message').value.trim();
+
+    if (!name) {
+      document.getElementById('exp-name').focus();
+      return;
+    }
+
+    let msg = `Hi! I'm ${name || 'a guest'} and I'm interested in`;
+    if (interest && interest !== '') msg += ` the ${interest} experience`;
+    else msg += ' experiencing Kerala';
+    msg += ` at ${VENAD.name}.`;
+    if (dates)   msg += ` My dates: ${dates}.`;
+    if (message) msg += ` Details: ${message}`;
+
+    window.open(
+      `https://wa.me/${VENAD.whatsapp}?text=${encodeURIComponent(msg)}`,
+      '_blank'
+    );
+  });
+
+})();
+</script>
+
+</body>
+</html>
