@@ -685,62 +685,6 @@
     });
   });
 
-  /* ── WhatsApp confirmation modal ── */
-  (function () {
-    const modal   = document.getElementById('wa-modal');
-    const subject = document.getElementById('wa-modal-subject');
-    const confirm = document.getElementById('wa-modal-confirm');
-    const cancel  = document.getElementById('wa-modal-cancel');
-    let   pendingUrl = '';
-
-    /* Build WA URL and show modal instead of routing immediately */
-    window.waConfirm = function (type, name) {
-      let msg = '';
-      if (type === 'experience') {
-        msg = `Hi! I'm interested in the ${name} experience at ${VENAD.name}. Could you share more details and availability?`;
-      } else if (type === 'room') {
-        msg = `Hi! I'd like to book the ${name} at ${VENAD.name}. Could you please share availability?`;
-      } else {
-        msg = `Hi! I'd like to know more about ${VENAD.name} in ${VENAD.location}.`;
-      }
-      pendingUrl = `https://wa.me/${VENAD.whatsapp}?text=${encodeURIComponent(msg)}`;
-      subject.textContent = name || VENAD.name;
-      openModal();
-    };
-
-    function openModal() {
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      /* Focus the cancel button for accessibility */
-      setTimeout(() => cancel.focus(), 50);
-    }
-
-    function closeModal() {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      pendingUrl = '';
-    }
-
-    confirm.addEventListener('click', () => {
-      window.open(pendingUrl, '_blank');
-      closeModal();
-    });
-
-    cancel.addEventListener('click', closeModal);
-
-    /* Close on backdrop click */
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    /* Close on Escape */
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-    });
-
-  })();
 </script>
 
 </body>
