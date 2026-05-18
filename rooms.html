@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Four rooms, four stories — Venad House, Alleppey. From a private waterfront villa to a century-old heritage loft.">
+  <meta property="og:title" content="Rooms & Suites | Venad House, Alleppey">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80">
+  <title>Rooms & Suites | Venad House</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/rooms.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="Venad House home">
+      Venad House
+      <span class="nav-logo-sub">Alleppey, Kerala</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="rooms.html"       class="nav-link active">Rooms</a>
+      <a href="experiences.html" class="nav-link">Experiences</a>
+      <a href="gallery.html"     class="nav-link">Gallery</a>
+      <a href="story.html"       class="nav-link">Our Story</a>
+    </div>
+
+    <button type="button" class="nav-book" onclick="waBook()">Book Now</button>
+
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav-mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <a href="rooms.html"       class="nav-mobile-link">Rooms</a>
+    <a href="experiences.html" class="nav-mobile-link">Experiences</a>
+    <a href="gallery.html"     class="nav-mobile-link">Gallery</a>
+    <a href="story.html"       class="nav-mobile-link">Our Story</a>
+    <div class="nav-mobile-divider"></div>
+    <button type="button" class="nav-mobile-book" onclick="waBook()">Reserve a Room &nbsp;&#8599;</button>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE HERO
+════════════════════════════════════════════════════════════ -->
+<section class="rooms-hero" aria-label="Rooms page hero">
+
+  <!-- Left: text -->
+  <div class="rooms-hero-text">
+    <div class="rooms-hero-eyebrow">
+      <div class="rooms-hero-eyebrow-line"></div>
+      <span class="rooms-hero-eyebrow-text">Four rooms &nbsp;&middot;&nbsp; Four stories</span>
+    </div>
+    <h1 class="rooms-hero-title hero-text-reveal d1">
+      Rooms &amp;<br>Suites
+    </h1>
+    <p class="rooms-hero-desc hero-text-reveal d3">
+      Each room at Venad House was built around a different way of experiencing Kerala — the water, the land, the light, and the history.
+    </p>
+  </div>
+
+  <!-- Right: image -->
+  <div class="rooms-hero-image">
+    <img
+      src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=85"
+      alt="Venad House room interior — heritage Kerala"
+      loading="eager"
+      fetchpriority="high"
+    >
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     STICKY SUB-NAV
+════════════════════════════════════════════════════════════ -->
+<nav class="rooms-subnav" id="rooms-subnav" aria-label="Jump to room">
+  <div class="rooms-subnav-inner">
+    <a href="#nadumuttom" class="rooms-subnav-link active" data-room="nadumuttom">
+      <span class="rooms-subnav-num">01</span>
+      Nadumuttom Suite
+    </a>
+    <a href="#backwater" class="rooms-subnav-link" data-room="backwater">
+      <span class="rooms-subnav-num">02</span>
+      Backwater Villa
+    </a>
+    <a href="#plantation" class="rooms-subnav-link" data-room="plantation">
+      <span class="rooms-subnav-num">03</span>
+      Plantation Room
+    </a>
+    <a href="#heritage" class="rooms-subnav-link" data-room="heritage">
+      <span class="rooms-subnav-num">04</span>
+      Heritage Loft
+    </a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ROOM 01 — NADUMUTTOM SUITE
+════════════════════════════════════════════════════════════ -->
+<section class="room-section" id="nadumuttom" aria-label="Nadumuttom Suite">
+  <div class="room-layout">
+
+    <!-- Images -->
+    <div class="room-images reveal-left">
+      <div class="room-img-primary img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1000&q=82"
+          alt="Nadumuttom Suite — open courtyard and mosaic floors"
+          loading="lazy"
+        >
+      </div>
+      <div class="room-img-secondary">
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=80"
+            alt="Nadumuttom Suite — bedroom detail"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600&q=80"
+            alt="Nadumuttom Suite — courtyard morning light"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="room-text reveal-right">
+      <span class="room-number" aria-hidden="true">01</span>
+      <h2 class="room-name">Nadumuttom Suite</h2>
+      <p class="room-tagline">The heart of the home</p>
+      <div class="room-divider" aria-hidden="true"></div>
+
+      <p class="room-description">
+        In traditional Kerala architecture, the <em>nadumuttom</em> — the open central courtyard — is where the family gathers, where light enters the home, and where time moves slowly. This suite is built around one.
+      </p>
+      <p class="room-description">
+        A skylight floods the original mosaic floors with morning gold. The king bed faces the courtyard so the first thing you see when you wake is open sky. At night, the courtyard becomes a still, private garden lit by brass oil lamps.
+      </p>
+
+      <ul class="room-features" aria-label="Room features">
+        <li class="room-feature">Private Open Courtyard</li>
+        <li class="room-feature">King Bed</li>
+        <li class="room-feature">Ensuite Bathroom</li>
+        <li class="room-feature">Rain Shower</li>
+        <li class="room-feature">Writing Desk</li>
+        <li class="room-feature">Garden View</li>
+        <li class="room-feature">Up to 2 Guests</li>
+      </ul>
+
+      <div class="room-price-block">
+        <div class="room-price-wrap">
+          <span class="room-price-amount">&#8377;7,500</span>
+          <span class="room-price-note">per night</span>
+          <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
+        </div>
+        <div class="room-cta-group">
+          <button class="btn btn-primary" onclick="waConfirm('room', 'Nadumuttom Suite')">
+            Book This Room
+          </button>
+          <button class="btn btn-ghost" onclick="waConfirm('general', 'Nadumuttom Suite')">
+            Ask a question
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ROOM 02 — BACKWATER VILLA
+════════════════════════════════════════════════════════════ -->
+<section class="room-section" id="backwater" aria-label="Backwater Villa">
+  <div class="room-layout">
+
+    <!-- Images (RTL flipped for desktop) -->
+    <div class="room-images reveal-right">
+      <div class="room-img-primary img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1000&q=82"
+          alt="Backwater Villa — private cottage on the water's edge"
+          loading="lazy"
+        >
+      </div>
+      <div class="room-img-secondary">
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80"
+            alt="Backwater Villa — verandah at sunset"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80"
+            alt="Backwater Villa — freestanding bathtub"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="room-text reveal-left">
+      <span class="room-number" aria-hidden="true">02</span>
+      <h2 class="room-name">Backwater Villa</h2>
+      <p class="room-tagline">Where the land meets the water</p>
+      <div class="room-divider" aria-hidden="true"></div>
+
+      <p class="room-description">
+        A private cottage sitting directly on the bank of Vembanad Lake. Your verandah hangs three feet above the water. Traditional <em>kettuvallam</em> houseboats drift past at dawn. Herons fish in the shallows below before the rest of the world wakes.
+      </p>
+      <p class="room-description">
+        Inside, a freestanding stone bathtub overlooks the backwaters through a floor-to-ceiling window. The bedroom has its own private entrance from the garden — you are entirely separate from the main house, entirely alone with the lake.
+      </p>
+
+      <ul class="room-features" aria-label="Room features">
+        <li class="room-feature">Direct Waterfront</li>
+        <li class="room-feature">Private Verandah</li>
+        <li class="room-feature">King Bed</li>
+        <li class="room-feature">Stone Bathtub</li>
+        <li class="room-feature">Private Garden Entrance</li>
+        <li class="room-feature">Panoramic Lake View</li>
+        <li class="room-feature">Up to 2 Guests</li>
+      </ul>
+
+      <div class="room-price-block">
+        <div class="room-price-wrap">
+          <span class="room-price-amount">&#8377;12,000</span>
+          <span class="room-price-note">per night</span>
+          <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
+        </div>
+        <div class="room-cta-group">
+          <button class="btn btn-primary" onclick="waConfirm('room', 'Backwater Villa')">
+            Book This Room
+          </button>
+          <button class="btn btn-ghost" onclick="waConfirm('general', 'Backwater Villa')">
+            Ask a question
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ROOM 03 — PLANTATION ROOM
+════════════════════════════════════════════════════════════ -->
+<section class="room-section" id="plantation" aria-label="Plantation Room">
+  <div class="room-layout">
+
+    <!-- Images -->
+    <div class="room-images reveal-left">
+      <div class="room-img-primary img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&q=82"
+          alt="Plantation Room — garden view with open shower"
+          loading="lazy"
+        >
+      </div>
+      <div class="room-img-secondary">
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80"
+            alt="Plantation Room — spice garden outside the window"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80"
+            alt="Plantation Room — morning breakfast in the garden"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="room-text reveal-right">
+      <span class="room-number" aria-hidden="true">03</span>
+      <h2 class="room-name">Plantation Room</h2>
+      <p class="room-tagline">The slowest mornings in Kerala</p>
+      <div class="room-divider" aria-hidden="true"></div>
+
+      <p class="room-description">
+        Surrounded by thirty-year-old coconut palms and a working spice garden that Rajan has tended since before you were born. The scent of cardamom comes through the window in the early morning before you even open your eyes.
+      </p>
+      <p class="room-description">
+        The open-air stone shower opens onto a private garden enclosure. No roof, no walls — just the sky, the trees, and the sound of birds. This is the room for guests who came to Kerala to breathe deeply and slow everything down.
+      </p>
+
+      <ul class="room-features" aria-label="Room features">
+        <li class="room-feature">Private Spice Garden View</li>
+        <li class="room-feature">Queen Bed</li>
+        <li class="room-feature">Open-Air Stone Shower</li>
+        <li class="room-feature">Private Garden Enclosure</li>
+        <li class="room-feature">Handwoven Coir Mats</li>
+        <li class="room-feature">Natural Ventilation</li>
+        <li class="room-feature">Up to 2 Guests</li>
+      </ul>
+
+      <div class="room-price-block">
+        <div class="room-price-wrap">
+          <span class="room-price-amount">&#8377;5,500</span>
+          <span class="room-price-note">per night</span>
+          <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
+        </div>
+        <div class="room-cta-group">
+          <button class="btn btn-primary" onclick="waConfirm('room', 'Plantation Room')">
+            Book This Room
+          </button>
+          <button class="btn btn-ghost" onclick="waConfirm('general', 'Plantation Room')">
+            Ask a question
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     ROOM 04 — HERITAGE LOFT
+════════════════════════════════════════════════════════════ -->
+<section class="room-section" id="heritage" aria-label="Heritage Loft">
+  <div class="room-layout">
+
+    <!-- Images (RTL flipped for desktop) -->
+    <div class="room-images reveal-right">
+      <div class="room-img-primary img-hover-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1000&q=82"
+          alt="Heritage Loft — original 1924 rosewood ceiling beams"
+          loading="lazy"
+        >
+      </div>
+      <div class="room-img-secondary">
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=600&q=80"
+            alt="Heritage Loft — mezzanine reading nook"
+            loading="lazy"
+          >
+        </div>
+        <div class="room-img-secondary-item img-hover-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80"
+            alt="Heritage Loft — canal view from the window"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="room-text reveal-left">
+      <span class="room-number" aria-hidden="true">04</span>
+      <h2 class="room-name">Heritage Loft</h2>
+      <p class="room-tagline">One hundred years, undisturbed</p>
+      <div class="room-divider" aria-hidden="true"></div>
+
+      <p class="room-description">
+        These were the original family quarters of Krishnan Varma, built in 1924. The rosewood ceiling beams have not been touched. The antique brass oil lamps still work. The coir mat flooring is the same weave that was laid when the house was built.
+      </p>
+      <p class="room-description">
+        The loft mezzanine — reached by a short teak ladder — holds a single daybed and a window that opens directly over the canal. Guests who have stayed here describe it as the most silent place they have ever slept.
+      </p>
+
+      <ul class="room-features" aria-label="Room features">
+        <li class="room-feature">Original 1924 Rosewood Beams</li>
+        <li class="room-feature">King Bed</li>
+        <li class="room-feature">Mezzanine Reading Loft</li>
+        <li class="room-feature">Antique Brass Fittings</li>
+        <li class="room-feature">Canal View</li>
+        <li class="room-feature">Coir Mat Flooring</li>
+        <li class="room-feature">Up to 2 Guests</li>
+      </ul>
+
+      <div class="room-price-block">
+        <div class="room-price-wrap">
+          <span class="room-price-amount">&#8377;9,500</span>
+          <span class="room-price-note">per night</span>
+          <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
+        </div>
+        <div class="room-cta-group">
+          <button class="btn btn-primary" onclick="waConfirm('room', 'Heritage Loft')">
+            Book This Room
+          </button>
+          <button class="btn btn-ghost" onclick="waConfirm('general', 'Heritage Loft')">
+            Ask a question
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     NOT SURE SECTION
+════════════════════════════════════════════════════════════ -->
+<div class="rooms-help">
+  <p class="rooms-help-title reveal">"Not sure which room is right for you?"</p>
+  <p class="rooms-help-text reveal">Tell us a little about what you are looking for — the water, the garden, the history — and we will help you choose.</p>
+  <button class="btn btn-outline reveal" onclick="waBook()">
+    Ask Us Directly &nbsp;&#8594;
+  </button>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="wrapper">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Venad House</a>
+        <span class="footer-logo-sub">Where Kerala Lives</span>
+        <p class="footer-brand-desc">
+          An ancestral home on the Alleppey backwaters, open to travellers who seek more than a room and a bed.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="footer-soc-link" aria-label="Instagram">ig</a>
+          <a href="https://wa.me/919876543210" class="footer-soc-link" aria-label="WhatsApp" style="background:rgba(37,211,102,0.15); color:#4ade80;">wa</a>
+        </div>
+      </div>
+
+      <nav aria-label="Explore">
+        <span class="footer-col-head">Explore</span>
+        <a href="rooms.html"       class="footer-link">Rooms &amp; Suites</a>
+        <a href="experiences.html" class="footer-link">Experiences</a>
+        <a href="gallery.html"     class="footer-link">Gallery</a>
+        <a href="story.html"       class="footer-link">Our Story</a>
+      </nav>
+
+      <nav aria-label="Nearby attractions">
+        <span class="footer-col-head">Nearby</span>
+        <a href="#" class="footer-link">Vembanad Lake</a>
+        <a href="#" class="footer-link">Kumarakom Birds</a>
+        <a href="#" class="footer-link">Marari Beach</a>
+        <a href="#" class="footer-link">Fort Kochi</a>
+        <a href="#" class="footer-link">Kochi Airport</a>
+      </nav>
+
+      <div>
+        <span class="footer-col-head">Contact</span>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9742;</span>
+          <a href="tel:+919876543210" class="footer-contact-text">+91 98765 43210</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#9993;</span>
+          <a href="mailto:hello@venadhome.com" class="footer-contact-text">hello@venadhome.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <span class="footer-contact-icon">&#8982;</span>
+          <span class="footer-contact-text">Alleppey Backwaters,<br>Alappuzha, Kerala 688001</span>
+        </div>
+        <div style="margin-top:1.6rem;">
+          <button class="btn btn-primary" onclick="waBook()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
+            Book via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Venad House, Alappuzha, Kerala</span>
+      <span class="footer-built">Built with care in Kerala</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP FLOAT
+════════════════════════════════════════════════════════════ -->
+<a href="javascript:void(0)" class="wa-float" onclick="waGeneral()" aria-label="Chat on WhatsApp" role="button">
+  <svg viewBox="0 0 24 24" aria-hidden="true" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHATSAPP CONFIRMATION MODAL
+════════════════════════════════════════════════════════════ -->
+<div class="wa-modal-overlay" id="wa-modal" role="dialog" aria-modal="true" aria-label="WhatsApp confirmation" aria-hidden="true">
+  <div class="wa-modal-card">
+    <div class="wa-modal-shine" aria-hidden="true"></div>
+    <div class="wa-modal-icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </div>
+    <p class="wa-modal-eyebrow">You&#8217;re about to open</p>
+    <h3 class="wa-modal-title">WhatsApp</h3>
+    <p class="wa-modal-body">We&#8217;ll start a conversation about <strong id="wa-modal-subject">your enquiry</strong>. You can close WhatsApp anytime.</p>
+    <div class="wa-modal-actions">
+      <button class="wa-modal-cancel" id="wa-modal-cancel" aria-label="Cancel">Cancel</button>
+      <button class="wa-modal-confirm" id="wa-modal-confirm" aria-label="Continue to WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Continue
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════════ -->
+<script src="js/config.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/animations.js"></script>
+<script>
+(function () {
+
+  /* ── Sticky subnav shadow ── */
+  const subnav = document.getElementById('rooms-subnav');
+  window.addEventListener('scroll', () => {
+    subnav.classList.toggle('shadowed', window.scrollY > 100);
+  }, { passive: true });
+
+  /* ── Subnav active tracking via IntersectionObserver ── */
+  const sections = document.querySelectorAll('.room-section');
+  const navLinks = document.querySelectorAll('.rooms-subnav-link');
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('data-room') === id);
+          });
+        }
+      });
+    },
+    { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+  );
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  /* ── Smooth scroll for subnav links ── */
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        const offset = subnav.offsetHeight + 64 + 24;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ── WhatsApp confirmation modal ── */
+  const modal   = document.getElementById('wa-modal');
+  const subject = document.getElementById('wa-modal-subject');
+  const confirm = document.getElementById('wa-modal-confirm');
+  const cancel  = document.getElementById('wa-modal-cancel');
+  let pendingUrl = '';
+
+  window.waConfirm = function (type, name) {
+    let msg = '';
+    if (type === 'room') {
+      msg = `Hi! I'd like to book the ${name} at ${VENAD.name}. Could you please share availability and details?`;
+    } else {
+      msg = `Hi! I have a question about the ${name} at ${VENAD.name}.`;
+    }
+    pendingUrl = `https://wa.me/${VENAD.whatsapp}?text=${encodeURIComponent(msg)}`;
+    subject.textContent = name || VENAD.name;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => cancel.focus(), 50);
+  };
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    pendingUrl = '';
+  }
+
+  confirm.addEventListener('click', () => { window.open(pendingUrl, '_blank'); closeModal(); });
+  cancel.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+})();
+</script>
+
+</body>
+</html>
