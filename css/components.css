@@ -831,9 +831,9 @@ a.footer-contact-text:hover {
   font-size: 0.62rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 255, 255, 0.62);
   display: block;
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
 }
 
 .enquiry-close {
@@ -954,7 +954,7 @@ a.footer-contact-text:hover {
 
 /* Section within drawer */
 .enquiry-section {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.2rem;
 }
 
 .enquiry-section-label {
@@ -988,7 +988,7 @@ a.footer-contact-text:hover {
   background: #fff;
   border: 1px solid rgba(13, 31, 20, 0.14);
   border-radius: 2px;
-  padding: 0.8rem 1rem;
+  padding: 0.88rem 1rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem;
   color: var(--text-dark);
@@ -1009,7 +1009,9 @@ a.footer-contact-text:hover {
 
 .enquiry-input::placeholder,
 .enquiry-textarea::placeholder {
-  color: rgba(13, 31, 20, 0.3);
+  color: rgba(13, 31, 20, 0.35);
+  font-style: italic;
+  font-size: 0.82rem;
 }
 
 .enquiry-textarea {
@@ -1057,9 +1059,10 @@ a.footer-contact-text:hover {
 
 .enquiry-room-option-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  color: var(--forest);
+  font-size: 1.15rem;
   font-weight: 400;
+  color: var(--forest);
+  letter-spacing: 0.01em;
 }
 
 .enquiry-room-option-price {
