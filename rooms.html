@@ -39,7 +39,7 @@
       <a href="story.html"       class="nav-link">Our Story</a>
     </div>
 
-    <button type="button" class="nav-book" onclick="waBook()">Book Now</button>
+    <button type="button" class="nav-book" onclick="openEnquiry()">Book Now</button>
 
     <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -53,7 +53,7 @@
     <a href="gallery.html"     class="nav-mobile-link">Gallery</a>
     <a href="story.html"       class="nav-mobile-link">Our Story</a>
     <div class="nav-mobile-divider"></div>
-    <button type="button" class="nav-mobile-book" onclick="waBook()">Reserve a Room &nbsp;&#8599;</button>
+    <button type="button" class="nav-mobile-book" onclick="openEnquiry()">Reserve a Room &nbsp;&#8599;</button>
   </div>
 </header>
 
@@ -179,10 +179,10 @@
           <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
         </div>
         <div class="room-cta-group">
-          <button class="btn btn-primary" onclick="waConfirm('room', 'Nadumuttom Suite')">
+          <button class="btn btn-primary" onclick="openEnquiry('nadumuttom')">
             Book This Room
           </button>
-          <button class="btn btn-ghost" onclick="waConfirm('general', 'Nadumuttom Suite')">
+          <button class="btn btn-ghost" onclick="openEnquiry('nadumuttom')">
             Ask a question
           </button>
         </div>
@@ -257,10 +257,10 @@
           <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
         </div>
         <div class="room-cta-group">
-          <button class="btn btn-primary" onclick="waConfirm('room', 'Backwater Villa')">
+          <button class="btn btn-primary" onclick="openEnquiry('backwater')">
             Book This Room
           </button>
-          <button class="btn btn-ghost" onclick="waConfirm('general', 'Backwater Villa')">
+          <button class="btn btn-ghost" onclick="openEnquiry('backwater')">
             Ask a question
           </button>
         </div>
@@ -335,10 +335,10 @@
           <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
         </div>
         <div class="room-cta-group">
-          <button class="btn btn-primary" onclick="waConfirm('room', 'Plantation Room')">
+          <button class="btn btn-primary" onclick="openEnquiry('plantation')">
             Book This Room
           </button>
-          <button class="btn btn-ghost" onclick="waConfirm('general', 'Plantation Room')">
+          <button class="btn btn-ghost" onclick="openEnquiry('plantation')">
             Ask a question
           </button>
         </div>
@@ -413,10 +413,10 @@
           <span class="room-price-tax">Taxes included &nbsp;&middot;&nbsp; Breakfast included</span>
         </div>
         <div class="room-cta-group">
-          <button class="btn btn-primary" onclick="waConfirm('room', 'Heritage Loft')">
+          <button class="btn btn-primary" onclick="openEnquiry('heritage')">
             Book This Room
           </button>
-          <button class="btn btn-ghost" onclick="waConfirm('general', 'Heritage Loft')">
+          <button class="btn btn-ghost" onclick="openEnquiry('heritage')">
             Ask a question
           </button>
         </div>
@@ -433,7 +433,7 @@
 <div class="rooms-help">
   <p class="rooms-help-title reveal">"Not sure which room is right for you?"</p>
   <p class="rooms-help-text reveal">Tell us a little about what you are looking for — the water, the garden, the history — and we will help you choose.</p>
-  <button class="btn btn-outline reveal" onclick="waBook()">
+  <button class="btn btn-outline reveal" onclick="openEnquiry()">
     Ask Us Directly &nbsp;&#8594;
   </button>
 </div>
@@ -490,7 +490,7 @@
           <span class="footer-contact-text">Alleppey Backwaters,<br>Alappuzha, Kerala 688001</span>
         </div>
         <div style="margin-top:1.6rem;">
-          <button class="btn btn-primary" onclick="waBook()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
+          <button class="btn btn-primary" onclick="openEnquiry()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
             Book via WhatsApp
           </button>
         </div>
@@ -542,6 +542,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      SCRIPTS
 ════════════════════════════════════════════════════════════ -->
+<script src="js/enquiry.js"></script>
 <script src="js/config.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/animations.js"></script>

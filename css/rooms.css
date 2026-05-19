@@ -458,7 +458,7 @@
   }
 
   .rooms-subnav {
-    top: 0;
+    top: 64px; /* nav is always scrolled state on rooms page */
   }
 }
 

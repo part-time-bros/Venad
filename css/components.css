@@ -757,3 +757,603 @@ a.footer-contact-text:hover {
     text-align: center;
   }
 }
+
+/* ── ENQUIRY DRAWER ──────────────────────────────────────────── */
+/*
+   Slide-in drawer from the right.
+   3 steps: Stay → Experiences → Review.
+   Works on every page — JS in enquiry.js renders it dynamically.
+*/
+
+/* Backdrop */
+.enquiry-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  background: rgba(8, 20, 12, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity    0.4s var(--ease-out),
+    visibility 0.4s var(--ease-out);
+}
+
+.enquiry-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Drawer panel */
+.enquiry-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 710;
+  width: min(480px, 100vw);
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.45s var(--ease-out);
+  box-shadow: -8px 0 48px rgba(0, 0, 0, 0.18);
+}
+
+.enquiry-drawer.open {
+  transform: translateX(0);
+}
+
+/* Drawer header */
+.enquiry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.6rem;
+  border-bottom: 1px solid rgba(13, 31, 20, 0.08);
+  background: var(--forest);
+  flex-shrink: 0;
+}
+
+.enquiry-header-left {}
+
+.enquiry-header-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  display: block;
+}
+
+.enquiry-header-sub {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.enquiry-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1;
+  transition:
+    background   0.25s var(--ease-out),
+    color        0.25s var(--ease-out),
+    transform    0.3s  var(--ease-out);
+  flex-shrink: 0;
+}
+
+.enquiry-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Step progress */
+.enquiry-steps {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  background: var(--linen);
+  border-bottom: 1px solid rgba(13, 31, 20, 0.07);
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.enquiry-step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  position: relative;
+}
+
+.enquiry-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background: rgba(13, 31, 20, 0.12);
+  z-index: 0;
+}
+
+.enquiry-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(13, 31, 20, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s, color 0.3s;
+}
+
+.enquiry-step-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.enquiry-step.active .enquiry-step-num {
+  background: var(--terra);
+  color: #fff;
+}
+
+.enquiry-step.active .enquiry-step-label {
+  color: var(--forest);
+  font-weight: 500;
+}
+
+.enquiry-step.done .enquiry-step-num {
+  background: var(--moss);
+  color: #fff;
+}
+
+/* Scrollable content area */
+.enquiry-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.6rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--moss) transparent;
+}
+
+.enquiry-body::-webkit-scrollbar {
+  width: 3px;
+}
+
+.enquiry-body::-webkit-scrollbar-thumb {
+  background: var(--moss);
+  border-radius: 2px;
+}
+
+/* Section within drawer */
+.enquiry-section {
+  margin-bottom: 1.6rem;
+}
+
+.enquiry-section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Form fields */
+.enquiry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.enquiry-field-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.enquiry-input,
+.enquiry-select,
+.enquiry-textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(13, 31, 20, 0.14);
+  border-radius: 2px;
+  padding: 0.8rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  outline: none;
+  transition:
+    border-color 0.25s var(--ease-out),
+    box-shadow   0.25s var(--ease-out);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.enquiry-input:focus,
+.enquiry-select:focus,
+.enquiry-textarea:focus {
+  border-color: var(--moss);
+  box-shadow: 0 0 0 3px rgba(45, 94, 62, 0.1);
+}
+
+.enquiry-input::placeholder,
+.enquiry-textarea::placeholder {
+  color: rgba(13, 31, 20, 0.3);
+}
+
+.enquiry-textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.enquiry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* Room selector */
+.enquiry-room-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.enquiry-room-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid rgba(13, 31, 20, 0.12);
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    border-color 0.25s var(--ease-out),
+    background   0.25s var(--ease-out);
+  gap: 0.75rem;
+}
+
+.enquiry-room-option:hover {
+  border-color: var(--moss);
+  background: rgba(45, 94, 62, 0.04);
+}
+
+.enquiry-room-option.selected {
+  border-color: var(--terra);
+  background: rgba(179, 85, 40, 0.05);
+}
+
+.enquiry-room-option-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--forest);
+  font-weight: 400;
+}
+
+.enquiry-room-option-price {
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.enquiry-room-option-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(13, 31, 20, 0.2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s;
+}
+
+.enquiry-room-option.selected .enquiry-room-option-radio {
+  border-color: var(--terra);
+}
+
+.enquiry-room-option.selected .enquiry-room-option-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terra);
+}
+
+/* Experience checklist */
+.enquiry-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.enquiry-exp-option {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: #fff;
+  border: 1px solid rgba(13, 31, 20, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    border-color 0.25s var(--ease-out),
+    background   0.25s var(--ease-out);
+}
+
+.enquiry-exp-option:hover {
+  border-color: var(--moss);
+  background: rgba(45, 94, 62, 0.04);
+}
+
+.enquiry-exp-option.selected {
+  border-color: var(--moss);
+  background: rgba(45, 94, 62, 0.06);
+}
+
+.enquiry-exp-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(13, 31, 20, 0.2);
+  border-radius: 2px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.enquiry-exp-option.selected .enquiry-exp-checkbox {
+  background: var(--moss);
+  border-color: var(--moss);
+}
+
+.enquiry-exp-checkbox-tick {
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.enquiry-exp-option.selected .enquiry-exp-checkbox-tick {
+  opacity: 1;
+}
+
+.enquiry-exp-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.enquiry-exp-name {
+  font-size: 0.88rem;
+  color: var(--forest);
+  font-weight: 400;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.enquiry-exp-meta {
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  display: block;
+  margin-top: 0.1rem;
+}
+
+.enquiry-exp-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--terra);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Review step */
+.enquiry-review-block {
+  background: #fff;
+  border: 1px solid rgba(13, 31, 20, 0.1);
+  border-radius: 2px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.enquiry-review-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 0.85rem;
+}
+
+.enquiry-review-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.55rem;
+}
+
+.enquiry-review-key {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+.enquiry-review-val {
+  font-size: 0.88rem;
+  color: var(--forest);
+  font-weight: 500;
+  text-align: right;
+}
+
+.enquiry-review-divider {
+  height: 1px;
+  background: rgba(13, 31, 20, 0.08);
+  margin: 0.75rem 0;
+}
+
+.enquiry-review-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.enquiry-review-total-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.enquiry-review-total-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--forest);
+}
+
+.enquiry-review-total-note {
+  font-size: 0.68rem;
+  color: var(--text-soft);
+  margin-top: 0.2rem;
+  text-align: right;
+}
+
+/* Drawer footer */
+.enquiry-footer {
+  padding: 1.2rem 1.6rem;
+  border-top: 1px solid rgba(13, 31, 20, 0.08);
+  background: var(--cream);
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.enquiry-btn-back {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  background: transparent;
+  border: 1px solid rgba(13, 31, 20, 0.15);
+  border-radius: 2px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.enquiry-btn-back:hover {
+  border-color: var(--forest);
+  color: var(--forest);
+}
+
+.enquiry-btn-next {
+  flex: 2;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--terra);
+  border: none;
+  border-radius: 2px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.enquiry-btn-next:hover {
+  background: var(--terra-dark);
+  box-shadow: 0 4px 16px rgba(179, 85, 40, 0.3);
+  transform: translateY(-1px);
+}
+
+.enquiry-btn-next:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* WhatsApp send button — step 3 */
+.enquiry-btn-send {
+  flex: 2;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #25D366;
+  border: none;
+  border-radius: 2px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.enquiry-btn-send:hover {
+  background: #1fb855;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .enquiry-drawer {
+    width: 100vw;
+  }
+
+  .enquiry-row {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-step-label {
+    display: none;
+  }
+}

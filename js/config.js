@@ -15,10 +15,19 @@ const VENAD = {
   mapEmbed:   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62956.4!2d76.27!3d9.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b088d00c4a05999%3A0xb4fc8f558f8f2cd4!2sAlappuzha%2C+Kerala!5e0!3m2!1sen!2sin!4v1234567890',
 
   rooms: [
-    { id: 'nadumuttom',  name: 'Nadumuttom Suite',  price: '₹7,500' },
-    { id: 'backwater',   name: 'Backwater Villa',   price: '₹12,000' },
-    { id: 'plantation',  name: 'Plantation Room',   price: '₹5,500' },
-    { id: 'heritage',    name: 'Heritage Loft',     price: '₹9,500' },
+    { id: 'nadumuttom',  name: 'Nadumuttom Suite',  price: '₹7,500',  priceNum: 7500 },
+    { id: 'backwater',   name: 'Backwater Villa',   price: '₹12,000', priceNum: 12000 },
+    { id: 'plantation',  name: 'Plantation Room',   price: '₹5,500',  priceNum: 5500 },
+    { id: 'heritage',    name: 'Heritage Loft',     price: '₹9,500',  priceNum: 9500 },
+  ],
+
+  experiences: [
+    { id: 'kayak',      name: 'Sunrise Kayak',         price: '₹800',   priceNum: 800,  duration: '2 hrs',    per: 'person' },
+    { id: 'cooking',    name: 'Kerala Cooking Class',  price: '₹1,200', priceNum: 1200, duration: '3 hrs',    per: 'person' },
+    { id: 'spice',      name: 'Spice Garden Walk',     price: '₹400',   priceNum: 400,  duration: '1 hr',     per: 'person' },
+    { id: 'kathakali',  name: 'Kathakali Evening',     price: '₹1,500', priceNum: 1500, duration: '2 hrs',    per: 'person' },
+    { id: 'houseboat',  name: 'Houseboat Day Trip',    price: '₹4,000', priceNum: 4000, duration: 'Full day', per: 'boat'   },
+    { id: 'ayurveda',   name: 'Ayurveda Session',      price: '₹2,000', priceNum: 2000, duration: '90 mins',  per: 'person' },
   ],
 };
 
