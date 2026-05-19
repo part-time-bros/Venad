@@ -118,13 +118,17 @@
         <div class="enquiry-row">
           <div class="enquiry-field">
             <label class="enquiry-field-label" for="eq-checkin">Check-in</label>
-            <input class="enquiry-input" type="date" id="eq-checkin"
-                   value="${state.checkIn}" min="${todayStr()}">
+            <input class="enquiry-input" type="text" id="eq-checkin"
+                   placeholder="e.g. 15 Jan 2026"
+                   value="${state.checkIn}"
+                   autocomplete="off" inputmode="text">
           </div>
           <div class="enquiry-field">
             <label class="enquiry-field-label" for="eq-checkout">Check-out</label>
-            <input class="enquiry-input" type="date" id="eq-checkout"
-                   value="${state.checkOut}" min="${todayStr()}">
+            <input class="enquiry-input" type="text" id="eq-checkout"
+                   placeholder="e.g. 20 Jan 2026"
+                   value="${state.checkOut}"
+                   autocomplete="off" inputmode="text">
           </div>
         </div>
         <div class="enquiry-row">
@@ -148,7 +152,7 @@
 
     footer.innerHTML = `
       <button class="enquiry-btn-next" id="eq-next-1">
-        Next: Experiences &nbsp;&#8594;
+        Continue &nbsp;&#8594;
       </button>
     `;
 
@@ -224,7 +228,7 @@
     footer.innerHTML = `
       <button class="enquiry-btn-back" id="eq-back-2">&#8592; &nbsp;Back</button>
       <button class="enquiry-btn-next" id="eq-next-2">
-        Review Enquiry &nbsp;&#8594;
+        Continue &nbsp;&#8594;
       </button>
     `;
 
@@ -493,7 +497,11 @@
 
   function nightCount(inStr, outStr) {
     if (!inStr || !outStr) return 0;
-    const d = (new Date(outStr) - new Date(inStr)) / 86400000;
+    // Support both ISO (2026-01-15) and natural text (15 Jan 2026)
+    const a = new Date(inStr);
+    const b = new Date(outStr);
+    if (isNaN(a) || isNaN(b)) return 0;
+    const d = (b - a) / 86400000;
     return d > 0 ? Math.round(d) : 0;
   }
 
