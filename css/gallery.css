@@ -1,0 +1,302 @@
+/* ============================================================
+   VENAD HOUSE — gallery.css
+   Gallery page specific styles.
+   All variables from root.css.
+   ============================================================ */
+
+/* ── PAGE HERO ───────────────────────────────────────────────── */
+
+.gallery-hero {
+  position: relative;
+  background: var(--forest);
+  padding-top: calc(var(--nav-h) + clamp(3rem, 6vw, 5rem));
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-inline: var(--content-pad);
+  overflow: hidden;
+}
+
+.gallery-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.038;
+  pointer-events: none;
+}
+
+.gallery-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-hero-eyebrow-line {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.65;
+}
+
+.gallery-hero-eyebrow-text {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.gallery-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 7rem);
+  color: #fff;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+.gallery-hero-sub {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.45);
+  max-width: 280px;
+  line-height: 1.7;
+  text-align: right;
+}
+
+/* ── FILTER BAR ──────────────────────────────────────────────── */
+
+.gallery-filter-bar {
+  background: var(--forest);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 1rem var(--content-pad);
+  position: sticky;
+  top: 64px;
+  z-index: 300;
+}
+
+.gallery-filter-inner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.gallery-filter-pill {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.45rem 1.1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background    0.25s var(--ease-out),
+    color         0.25s var(--ease-out),
+    border-color  0.25s var(--ease-out);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.gallery-filter-pill:hover {
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+}
+
+.gallery-filter-pill.active {
+  background: var(--terra);
+  border-color: var(--terra);
+  color: #fff;
+}
+
+.gallery-count {
+  margin-left: auto;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ── MASONRY GRID ────────────────────────────────────────────── */
+
+.gallery-main {
+  background: var(--forest);
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--content-pad);
+  min-height: 60vh;
+}
+
+.gallery-masonry {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  columns: 3;
+  column-gap: 0.75rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  cursor: zoom-in;
+  display: block;
+}
+
+/* Transition for filter show/hide */
+.gallery-item {
+  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+
+.gallery-item.hidden {
+  display: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s var(--ease-out), filter 0.4s;
+  filter: brightness(0.9) saturate(1.1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1) saturate(1.2);
+}
+
+/* Hover overlay — category label */
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 20, 12, 0.75) 0%,
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.35s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.1rem;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Zoom icon on hover */
+.gallery-item-zoom {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity   0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item-zoom {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery-item-zoom svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+/* Empty state */
+.gallery-empty {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.gallery-empty.visible {
+  display: block;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .gallery-masonry {
+    columns: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-masonry {
+    columns: 2;
+  }
+
+  .gallery-hero-sub {
+    display: none;
+  }
+
+  .gallery-filter-bar {
+    top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-masonry {
+    columns: 2;
+    column-gap: 0.5rem;
+  }
+
+  .gallery-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-filter-pill {
+    font-size: 0.62rem;
+    padding: 0.4rem 0.85rem;
+  }
+}
