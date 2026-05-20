@@ -8,9 +8,10 @@ const VENAD = {
   name:       'Venad House',
   tagline:    'Where Kerala Lives',
   location:   'Alleppey, Kerala',
-  whatsapp:   '7034525123',       // ← Change for real client. Format: country code + number, no +
+  whatsapp:   '919876543210',       // ← Change for real client. Format: country code + number, no +
   email:      'hello@venadhome.com',
-  phone:      '+91 7034525123',
+  phone:      '+91 98765 43210',
+  address:    'Alleppey Backwaters,<br>Alappuzha, Kerala 688001',
   instagram:  'https://instagram.com/venadhome',
   mapEmbed:   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62956.4!2d76.27!3d9.49!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b088d00c4a05999%3A0xb4fc8f558f8f2cd4!2sAlappuzha%2C+Kerala!5e0!3m2!1sen!2sin!4v1234567890',
 
@@ -56,6 +57,45 @@ function waContact(name = '', dates = '', message = '') {
   if (message) msg += ` Additional details: ${message}`;
   window.open(`https://wa.me/${VENAD.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
 }
+
+/* ── Contact details renderer ───────────────────────────────
+   Replaces all [data-venad] elements with values from VENAD.
+   Run after DOM is ready. Changing any value above updates
+   the entire site automatically — no hardcoded HTML needed.
+─────────────────────────────────────────────────────────── */
+function renderContactDetails() {
+  document.querySelectorAll('[data-venad]').forEach(el => {
+    const key = el.dataset.venad;
+    switch (key) {
+      case 'phone':
+        if (el.tagName === 'A') el.href = 'tel:' + VENAD.phone.replace(/\s/g, '');
+        el.textContent = VENAD.phone;
+        break;
+      case 'email':
+        if (el.tagName === 'A') el.href = 'mailto:' + VENAD.email;
+        el.textContent = VENAD.email;
+        break;
+      case 'address':
+        el.innerHTML = VENAD.address;
+        break;
+      case 'wa-link':
+        el.href = 'https://wa.me/' + VENAD.whatsapp;
+        break;
+      case 'wa-link-float':
+        el.href = 'https://wa.me/' + VENAD.whatsapp;
+        break;
+      case 'name':
+        el.textContent = VENAD.name;
+        break;
+      case 'tagline':
+        el.textContent = VENAD.tagline;
+        break;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', renderContactDetails);
+
 
 function waConfirm(type, name) {
   let msg = '';

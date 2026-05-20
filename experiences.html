@@ -39,7 +39,7 @@
       <a href="story.html"       class="nav-link">Our Story</a>
     </div>
 
-    <button type="button" class="nav-book" onclick="waBook()">Book Now</button>
+    <button type="button" class="nav-book" onclick="openEnquiry()">Book Now</button>
 
     <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -53,7 +53,7 @@
     <a href="gallery.html"     class="nav-mobile-link">Gallery</a>
     <a href="story.html"       class="nav-mobile-link">Our Story</a>
     <div class="nav-mobile-divider"></div>
-    <button type="button" class="nav-mobile-book" onclick="waBook()">Reserve a Room &nbsp;&#8599;</button>
+    <button type="button" class="nav-mobile-book" onclick="openEnquiry()">Reserve a Room &nbsp;&#8599;</button>
   </div>
 </header>
 
@@ -588,7 +588,7 @@
         </p>
         <div class="footer-social">
           <a href="#" class="footer-soc-link" aria-label="Instagram">ig</a>
-          <a href="https://wa.me/919876543210" class="footer-soc-link" aria-label="WhatsApp" style="background:rgba(37,211,102,0.15); color:#4ade80;">wa</a>
+          <a href="https://wa.me/919876543210" class="footer-soc-link" aria-label="WhatsApp" data-venad="wa-link" style="background:rgba(37,211,102,0.15); color:#4ade80;">wa</a>
         </div>
       </div>
 
@@ -613,18 +613,18 @@
         <span class="footer-col-head">Contact</span>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">&#9742;</span>
-          <a href="tel:+919876543210" class="footer-contact-text">+91 98765 43210</a>
+          <a href="tel:+919876543210" class="footer-contact-text" data-venad="phone">+91 98765 43210</a>
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">&#9993;</span>
-          <a href="mailto:hello@venadhome.com" class="footer-contact-text">hello@venadhome.com</a>
+          <a href="mailto:hello@venadhome.com" class="footer-contact-text" data-venad="email">hello@venadhome.com</a>
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">&#8982;</span>
-          <span class="footer-contact-text">Alleppey Backwaters,<br>Alappuzha, Kerala 688001</span>
+          <span class="footer-contact-text" data-venad="address">Alleppey Backwaters,<br>Alappuzha, Kerala 688001</span>
         </div>
         <div style="margin-top:1.6rem;">
-          <button class="btn btn-primary" onclick="waBook()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
+          <button class="btn btn-primary" onclick="openEnquiry()" style="font-size:0.68rem; padding:0.7rem 1.4rem;">
             Book via WhatsApp
           </button>
         </div>
@@ -676,6 +676,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      SCRIPTS
 ════════════════════════════════════════════════════════════ -->
+<script src="js/lightbox.js"></script>
 <script src="js/enquiry.js"></script>
 <script src="js/config.js"></script>
 <script src="js/nav.js"></script>
