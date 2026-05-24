@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A visual journey through Venad House — rooms, backwaters, food, and the experiences that make Kerala unforgettable.">
+  <meta name="description" content="A visual journey through Venad House — the backwaters, the rooms, the food, and the experiences that make Kerala unforgettable.">
   <meta property="og:title" content="Gallery | Venad House, Alleppey">
   <meta property="og:image" content="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=80">
   <title>Gallery | Venad House</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="css/root.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/components.css">
@@ -22,31 +20,24 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
-     NAVIGATION
-════════════════════════════════════════════════════════════ -->
+<!-- NAV -->
 <header>
   <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
     <a href="index.html" class="nav-logo" aria-label="Venad House home">
       Venad House
       <span class="nav-logo-sub">Alleppey, Kerala</span>
     </a>
-
     <div class="nav-links">
       <a href="rooms.html"       class="nav-link">Rooms</a>
       <a href="experiences.html" class="nav-link">Experiences</a>
       <a href="gallery.html"     class="nav-link active">Gallery</a>
       <a href="story.html"       class="nav-link">Our Story</a>
     </div>
-
     <button type="button" class="nav-book" onclick="openEnquiry()">Book Now</button>
-
     <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <!-- Mobile Menu -->
   <div class="nav-mobile" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <a href="rooms.html"       class="nav-mobile-link">Rooms</a>
     <a href="experiences.html" class="nav-mobile-link">Experiences</a>
@@ -58,10 +49,8 @@
 </header>
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════════════════════ -->
-<section class="gallery-hero" aria-label="Gallery hero">
+<!-- HERO -->
+<section class="gallery-hero" aria-label="Gallery">
   <div class="gallery-hero-inner">
     <div>
       <div class="gallery-hero-eyebrow">
@@ -73,308 +62,261 @@
       </h1>
     </div>
     <p class="gallery-hero-sub hero-text-reveal d3">
-      The backwaters, the rooms, the food, the moments. Everything you'll find when you arrive.
+      The backwaters, the rooms, the food, the moments. Everything you will find when you arrive.
     </p>
   </div>
 </section>
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     FILTER BAR
-════════════════════════════════════════════════════════════ -->
-<div class="gallery-filter-bar" role="navigation" aria-label="Gallery filter">
-  <div class="gallery-filter-inner">
-    <button class="gallery-filter-pill active" data-filter="all" aria-pressed="true">
-      All
-    </button>
-    <button class="gallery-filter-pill" data-filter="backwaters" aria-pressed="false">
-      Backwaters
-    </button>
-    <button class="gallery-filter-pill" data-filter="rooms" aria-pressed="false">
-      Rooms
-    </button>
-    <button class="gallery-filter-pill" data-filter="food" aria-pressed="false">
-      Food &amp; Spices
-    </button>
-    <button class="gallery-filter-pill" data-filter="experiences" aria-pressed="false">
-      Experiences
-    </button>
-    <span class="gallery-count" id="gallery-count" aria-live="polite"></span>
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 1 — BACKWATERS
+══════════════════════════════════════════════════ -->
+
+<div class="gallery-chapter">
+  <div class="gallery-chapter-inner reveal">
+    <div>
+      <span class="gallery-chapter-label">Chapter One</span>
+      <h2 class="gallery-chapter-title">The Backwaters</h2>
+    </div>
+    <span class="gallery-chapter-count">5 photographs</span>
+  </div>
+  <span class="gallery-chapter-num" aria-hidden="true">01</span>
+</div>
+
+<div class="gallery-section">
+  <div class="gallery-section-inner">
+    <div class="gallery-grid-backwaters reveal">
+
+      <div class="gi bw-1"
+           data-lightbox-group="backwaters" tabindex="0" role="button"
+           aria-label="Alleppey backwaters at golden hour">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&q=82"
+             alt="Alleppey backwaters at golden hour" loading="lazy">
+      </div>
+
+      <div class="gi bw-2"
+           data-lightbox-group="backwaters" tabindex="0" role="button"
+           aria-label="Coconut palms reflected in still canal water">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=82"
+             alt="Coconut palms reflected in still canal water" loading="lazy">
+      </div>
+
+      <div class="gi bw-3"
+           data-lightbox-group="backwaters" tabindex="0" role="button"
+           aria-label="Traditional kettuvallam houseboat on Vembanad Lake">
+        <img src="https://images.unsplash.com/photo-1559628233-100c798642d0?w=1600&q=82"
+             alt="Traditional kettuvallam houseboat on Vembanad Lake" loading="lazy">
+      </div>
+
+      <div class="gi bw-4"
+           data-lightbox-group="backwaters" tabindex="0" role="button"
+           aria-label="Misty dawn over paddy fields and canals">
+        <img src="https://images.unsplash.com/photo-1587922546307-776227941871?w=900&q=82"
+             alt="Misty dawn over paddy fields and canals" loading="lazy">
+      </div>
+
+      <div class="gi bw-5"
+           data-lightbox-group="backwaters" tabindex="0" role="button"
+           aria-label="Sunset over Vembanad Lake from the Venad House jetty">
+        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=900&q=82"
+             alt="Sunset over Vembanad Lake from the Venad House jetty" loading="lazy">
+      </div>
+
+    </div>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     MASONRY GALLERY
-════════════════════════════════════════════════════════════ -->
-<main class="gallery-main" aria-label="Photo gallery">
-  <div class="gallery-masonry" id="gallery-masonry">
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 2 — ROOMS
+══════════════════════════════════════════════════ -->
 
-    <!-- ── BACKWATERS ── -->
+<div class="gallery-chapter">
+  <div class="gallery-chapter-inner reveal">
+    <div>
+      <span class="gallery-chapter-label">Chapter Two</span>
+      <h2 class="gallery-chapter-title">The Rooms</h2>
+    </div>
+    <span class="gallery-chapter-count">5 photographs</span>
+  </div>
+  <span class="gallery-chapter-num" aria-hidden="true">02</span>
+</div>
 
-    <div class="gallery-item" data-category="backwaters"
-         data-lightbox-group="backwaters" tabindex="0" role="button"
-         aria-label="Alleppey backwaters at golden hour">
-      <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=900&q=82"
-           alt="Alleppey backwaters at golden hour" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Backwaters</span>
+<div class="gallery-section">
+  <div class="gallery-section-inner">
+    <div class="gallery-grid-rooms reveal">
+
+      <div class="gi rm-1"
+           data-lightbox-group="rooms" tabindex="0" role="button"
+           aria-label="Heritage Loft — original 1924 rosewood ceiling beams">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=82"
+             alt="Heritage Loft — original 1924 rosewood ceiling beams" loading="lazy">
       </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+
+      <div class="gi rm-2"
+           data-lightbox-group="rooms" tabindex="0" role="button"
+           aria-label="Backwater Villa — private verandah above the lake">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=82"
+             alt="Backwater Villa — private verandah above the lake" loading="lazy">
       </div>
+
+      <!-- Row 2: three equal images -->
+      <div class="gallery-grid-rooms-row2">
+
+        <div class="gi"
+             data-lightbox-group="rooms" tabindex="0" role="button"
+             aria-label="Nadumuttom Suite — open courtyard with morning light">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=82"
+               alt="Nadumuttom Suite — open courtyard with morning light" loading="lazy">
+        </div>
+
+        <div class="gi"
+             data-lightbox-group="rooms" tabindex="0" role="button"
+             aria-label="Plantation Room — garden view and open shower">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=82"
+               alt="Plantation Room — garden view and open shower" loading="lazy">
+        </div>
+
+        <div class="gi"
+             data-lightbox-group="rooms" tabindex="0" role="button"
+             aria-label="Heritage Loft — mezzanine reading nook">
+          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=700&q=82"
+               alt="Heritage Loft — mezzanine reading nook" loading="lazy">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 3 — FOOD & SPICES
+══════════════════════════════════════════════════ -->
+
+<div class="gallery-chapter">
+  <div class="gallery-chapter-inner reveal">
+    <div>
+      <span class="gallery-chapter-label">Chapter Three</span>
+      <h2 class="gallery-chapter-title">Food &amp; Spices</h2>
+    </div>
+    <span class="gallery-chapter-count">4 photographs</span>
+  </div>
+  <span class="gallery-chapter-num" aria-hidden="true">03</span>
+</div>
+
+<div class="gallery-section">
+  <div class="gallery-section-inner">
+    <div class="gallery-grid-food reveal">
+
+      <div class="gi fd-1"
+           data-lightbox-group="food" tabindex="0" role="button"
+           aria-label="Kerala banana leaf meal with fish curry and sides">
+        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1200&q=82"
+             alt="Kerala banana leaf meal with fish curry and sides" loading="lazy">
+      </div>
+
+      <div class="gi fd-2"
+           data-lightbox-group="food" tabindex="0" role="button"
+           aria-label="Freshly harvested spices from the garden">
+        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=82"
+             alt="Freshly harvested spices from the garden" loading="lazy">
+      </div>
+
+      <div class="gi fd-3"
+           data-lightbox-group="food" tabindex="0" role="button"
+           aria-label="Ayurveda oils and garden herbs prepared for treatment">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&q=82"
+             alt="Ayurveda oils and garden herbs prepared for treatment" loading="lazy">
+      </div>
+
     </div>
 
-    <div class="gallery-item" data-category="rooms"
-         data-lightbox-group="rooms" tabindex="0" role="button"
-         aria-label="Heritage Loft interior with rosewood ceiling">
-      <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=82"
-           alt="Heritage Loft interior with rosewood ceiling" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Rooms</span>
+    <!-- 4th food image — full width below grid -->
+    <div class="fd-4-wrap reveal">
+      <div class="gi"
+           data-lightbox-group="food" tabindex="0" role="button"
+           aria-label="Turmeric and cardamom ground fresh from the spice garden">
+        <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=1600&q=82"
+             alt="Turmeric and cardamom ground fresh from the spice garden" loading="lazy">
       </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="food"
-         data-lightbox-group="food" tabindex="0" role="button"
-         aria-label="Kerala banana leaf meal with fish curry">
-      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=82"
-           alt="Kerala banana leaf meal with fish curry" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Food &amp; Spices</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="experiences"
-         data-lightbox-group="experiences" tabindex="0" role="button"
-         aria-label="Sunrise kayak through the Kerala backwater canals">
-      <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&q=82"
-           alt="Sunrise kayak through the Kerala backwater canals" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Experiences</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="backwaters"
-         data-lightbox-group="backwaters" tabindex="0" role="button"
-         aria-label="Traditional kettuvallam houseboat on Vembanad Lake">
-      <img src="https://images.unsplash.com/photo-1559628233-100c798642d0?w=800&q=82"
-           alt="Traditional kettuvallam houseboat on Vembanad Lake" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Backwaters</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="rooms"
-         data-lightbox-group="rooms" tabindex="0" role="button"
-         aria-label="Nadumuttom Suite open courtyard with morning light">
-      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=82"
-           alt="Nadumuttom Suite open courtyard with morning light" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Rooms</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="food"
-         data-lightbox-group="food" tabindex="0" role="button"
-         aria-label="Spices from the Venad House garden">
-      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=82"
-           alt="Spices from the Venad House garden" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Food &amp; Spices</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="experiences"
-         data-lightbox-group="experiences" tabindex="0" role="button"
-         aria-label="Kathakali performer in full costume and makeup">
-      <img src="https://images.unsplash.com/photo-1604423026493-095b82c9c7c3?w=800&q=82"
-           alt="Kathakali performer in full costume and makeup" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Experiences</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="backwaters"
-         data-lightbox-group="backwaters" tabindex="0" role="button"
-         aria-label="Kerala coconut palms reflecting on the backwater canal">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=82"
-           alt="Kerala coconut palms reflecting on the backwater canal" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Backwaters</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="rooms"
-         data-lightbox-group="rooms" tabindex="0" role="button"
-         aria-label="Backwater Villa verandah at sunrise">
-      <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=82"
-           alt="Backwater Villa verandah at sunrise" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Rooms</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="food"
-         data-lightbox-group="food" tabindex="0" role="button"
-         aria-label="Ayurveda oils and herbs from the garden">
-      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=82"
-           alt="Ayurveda oils and herbs from the garden" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Food &amp; Spices</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="experiences"
-         data-lightbox-group="experiences" tabindex="0" role="button"
-         aria-label="Houseboat day trip on the Kuttanad backwaters">
-      <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=82"
-           alt="Houseboat day trip on the Kuttanad backwaters" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Experiences</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="backwaters"
-         data-lightbox-group="backwaters" tabindex="0" role="button"
-         aria-label="Misty morning over the paddy fields and canals">
-      <img src="https://images.unsplash.com/photo-1587922546307-776227941871?w=800&q=82"
-           alt="Misty morning over the paddy fields and canals" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Backwaters</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="rooms"
-         data-lightbox-group="rooms" tabindex="0" role="button"
-         aria-label="Plantation Room open shower and garden enclosure">
-      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=82"
-           alt="Plantation Room open shower and garden enclosure" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Rooms</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="experiences"
-         data-lightbox-group="experiences" tabindex="0" role="button"
-         aria-label="Kerala cooking class on a wood-fired hearth">
-      <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=82"
-           alt="Kerala cooking class on a wood-fired hearth" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Experiences</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="backwaters"
-         data-lightbox-group="backwaters" tabindex="0" role="button"
-         aria-label="Sunset over Vembanad Lake from the Venad House jetty">
-      <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=82"
-           alt="Sunset over Vembanad Lake from the Venad House jetty" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Backwaters</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="rooms"
-         data-lightbox-group="rooms" tabindex="0" role="button"
-         aria-label="Heritage Loft mezzanine reading nook">
-      <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&q=82"
-           alt="Heritage Loft mezzanine reading nook" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Rooms</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <div class="gallery-item" data-category="food"
-         data-lightbox-group="food" tabindex="0" role="button"
-         aria-label="Freshly ground turmeric and cardamom from the spice garden">
-      <img src="https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=800&q=82"
-           alt="Freshly ground turmeric and cardamom from the spice garden" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-label">Food &amp; Spices</span>
-      </div>
-      <div class="gallery-item-zoom" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-      </div>
-    </div>
-
-    <!-- Empty state -->
-    <div class="gallery-empty" id="gallery-empty" aria-live="polite">
-      No photos in this category yet.
     </div>
 
   </div>
-</main>
+</div>
 
 
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════
+     CHAPTER 4 — EXPERIENCES
+══════════════════════════════════════════════════ -->
+
+<div class="gallery-chapter">
+  <div class="gallery-chapter-inner reveal">
+    <div>
+      <span class="gallery-chapter-label">Chapter Four</span>
+      <h2 class="gallery-chapter-title">Experiences</h2>
+    </div>
+    <span class="gallery-chapter-count">4 photographs</span>
+  </div>
+  <span class="gallery-chapter-num" aria-hidden="true">04</span>
+</div>
+
+<div class="gallery-section">
+  <div class="gallery-section-inner">
+    <div class="gallery-grid-experiences reveal">
+
+      <div class="gi ex-1"
+           data-lightbox-group="experiences" tabindex="0" role="button"
+           aria-label="Kathakali performer in full makeup and costume">
+        <img src="https://images.unsplash.com/photo-1604423026493-095b82c9c7c3?w=700&q=82"
+             alt="Kathakali performer in full makeup and costume" loading="lazy">
+      </div>
+
+      <div class="gi ex-2"
+           data-lightbox-group="experiences" tabindex="0" role="button"
+           aria-label="Sunrise kayak through the narrow backwater canals">
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=82"
+             alt="Sunrise kayak through the narrow backwater canals" loading="lazy">
+      </div>
+
+      <div class="gi ex-3"
+           data-lightbox-group="experiences" tabindex="0" role="button"
+           aria-label="Full day on a private houseboat through Kuttanad">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1600&q=82"
+             alt="Full day on a private houseboat through Kuttanad" loading="lazy">
+      </div>
+
+    </div>
+
+    <!-- 4th experience — full width below -->
+    <div class="ex-4-wrap reveal">
+      <div class="gi"
+           data-lightbox-group="experiences" tabindex="0" role="button"
+           aria-label="Kerala cooking class with Priya on the wood-fired hearth">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=82"
+             alt="Kerala cooking class with Priya on the wood-fired hearth" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- FOOTER -->
 <footer class="footer" role="contentinfo">
   <div class="wrapper">
     <div class="footer-grid">
-
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">Venad House</a>
         <span class="footer-logo-sub">Where Kerala Lives</span>
-        <p class="footer-brand-desc">
-          An ancestral home on the Alleppey backwaters, open to travellers who seek more than a room and a bed.
-        </p>
+        <p class="footer-brand-desc">An ancestral home on the Alleppey backwaters, open to travellers who seek more than a room and a bed.</p>
         <div class="footer-social">
           <a href="#" class="footer-soc-link" aria-label="Instagram">ig</a>
           <a href="https://wa.me/919876543210" class="footer-soc-link" data-venad="wa-link"
              aria-label="WhatsApp" style="background:rgba(37,211,102,0.15); color:#4ade80;">wa</a>
         </div>
       </div>
-
       <nav aria-label="Explore">
         <span class="footer-col-head">Explore</span>
         <a href="rooms.html"       class="footer-link">Rooms &amp; Suites</a>
@@ -382,8 +324,7 @@
         <a href="gallery.html"     class="footer-link">Gallery</a>
         <a href="story.html"       class="footer-link">Our Story</a>
       </nav>
-
-      <nav aria-label="Nearby attractions">
+      <nav aria-label="Nearby">
         <span class="footer-col-head">Nearby</span>
         <a href="#" class="footer-link">Vembanad Lake</a>
         <a href="#" class="footer-link">Kumarakom Birds</a>
@@ -391,7 +332,6 @@
         <a href="#" class="footer-link">Fort Kochi</a>
         <a href="#" class="footer-link">Kochi Airport</a>
       </nav>
-
       <div>
         <span class="footer-col-head">Contact</span>
         <div class="footer-contact-item">
@@ -412,9 +352,7 @@
           </button>
         </div>
       </div>
-
     </div>
-
     <div class="footer-bottom">
       <span class="footer-copy">&copy; 2026 Venad House, Alappuzha, Kerala</span>
       <span class="footer-built">Built with care in Kerala</span>
@@ -422,78 +360,19 @@
   </div>
 </footer>
 
-
-<!-- ═══════════════════════════════════════════════════════════
-     WHATSAPP FLOAT
-════════════════════════════════════════════════════════════ -->
+<!-- WA FLOAT -->
 <a href="javascript:void(0)" class="wa-float" onclick="waGeneral()" aria-label="Chat on WhatsApp" role="button">
   <svg viewBox="0 0 24 24" aria-hidden="true" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
 </a>
 
-
-<!-- ═══════════════════════════════════════════════════════════
-     SCRIPTS
-════════════════════════════════════════════════════════════ -->
+<!-- SCRIPTS -->
 <script src="js/lightbox.js"></script>
 <script src="js/enquiry.js"></script>
 <script src="js/config.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/animations.js"></script>
-<script>
-(function () {
-
-  const pills   = document.querySelectorAll('.gallery-filter-pill');
-  const items   = document.querySelectorAll('.gallery-item');
-  const counter = document.getElementById('gallery-count');
-  const empty   = document.getElementById('gallery-empty');
-
-  function updateCounter(visible) {
-    counter.textContent = `${visible} photo${visible !== 1 ? 's' : ''}`;
-  }
-
-  function applyFilter(filter) {
-    let visible = 0;
-
-    items.forEach(item => {
-      const cat = item.dataset.category;
-      const show = filter === 'all' || cat === filter;
-      item.classList.toggle('hidden', !show);
-      if (show) visible++;
-    });
-
-    updateCounter(visible);
-    empty.classList.toggle('visible', visible === 0);
-
-    /* Update lightbox groups based on active filter:
-       When a category filter is active, lightbox navigates
-       within that category only. "All" navigates across all. */
-    if (window.lightboxSetFilter) {
-      window.lightboxSetFilter(filter);
-    }
-  }
-
-  pills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const filter = pill.dataset.filter;
-
-      pills.forEach(p => {
-        p.classList.remove('active');
-        p.setAttribute('aria-pressed', 'false');
-      });
-      pill.classList.add('active');
-      pill.setAttribute('aria-pressed', 'true');
-
-      applyFilter(filter);
-    });
-  });
-
-  /* Initialise count */
-  applyFilter('all');
-
-})();
-</script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 /* ============================================================
    VENAD HOUSE — gallery.css
-   Gallery page specific styles.
-   All variables from root.css.
+   Editorial grid gallery. Hand-placed CSS Grid layouts.
+   No masonry algorithm. Every image placement is intentional.
    ============================================================ */
 
 /* ── PAGE HERO ───────────────────────────────────────────────── */
@@ -71,154 +71,130 @@
 .gallery-hero-sub {
   font-size: 0.88rem;
   color: rgba(255,255,255,0.45);
-  max-width: 280px;
-  line-height: 1.7;
+  max-width: 260px;
+  line-height: 1.75;
   text-align: right;
 }
 
-/* ── FILTER BAR ──────────────────────────────────────────────── */
+/* ── EDITORIAL CHAPTER DIVIDER ───────────────────────────────── */
+/* Full-width dark strip separating each category */
 
-.gallery-filter-bar {
+.gallery-chapter {
   background: var(--forest);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  padding: 1rem var(--content-pad);
-  position: sticky;
-  top: 64px;
-  z-index: 300;
-}
-
-.gallery-filter-inner {
-  max-width: var(--content-max);
-  margin-inline: auto;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
-.gallery-filter-pill {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  background: rgba(255,255,255,0.07);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 0.45rem 1.1rem;
-  border-radius: 2px;
-  cursor: pointer;
-  transition:
-    background    0.25s var(--ease-out),
-    color         0.25s var(--ease-out),
-    border-color  0.25s var(--ease-out);
-  white-space: nowrap;
-  user-select: none;
-}
-
-.gallery-filter-pill:hover {
-  background: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.85);
-}
-
-.gallery-filter-pill.active {
-  background: var(--terra);
-  border-color: var(--terra);
-  color: #fff;
-}
-
-.gallery-count {
-  margin-left: auto;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.3);
-}
-
-/* ── MASONRY GRID ────────────────────────────────────────────── */
-
-.gallery-main {
-  background: var(--forest);
-  padding: clamp(1.5rem, 3vw, 2.5rem) var(--content-pad);
-  min-height: 60vh;
-}
-
-.gallery-masonry {
-  max-width: var(--content-max);
-  margin-inline: auto;
-  columns: 3;
-  column-gap: 0.75rem;
-}
-
-.gallery-item {
-  break-inside: avoid;
-  margin-bottom: 0.75rem;
+  padding: clamp(2.5rem, 4vw, 3.5rem) var(--content-pad);
   position: relative;
   overflow: hidden;
-  border-radius: 2px;
-  cursor: zoom-in;
-  display: block;
 }
 
-/* Transition for filter show/hide */
-.gallery-item {
-  transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
-}
-
-.gallery-item.hidden {
-  display: none;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.6s var(--ease-out), filter 0.4s;
-  filter: brightness(0.9) saturate(1.1);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.04);
-  filter: brightness(1) saturate(1.2);
-}
-
-/* Hover overlay — category label */
-.gallery-item-overlay {
+.gallery-chapter::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(8, 20, 12, 0.75) 0%,
-    transparent 55%
-  );
-  opacity: 0;
-  transition: opacity 0.35s var(--ease-out);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.1rem;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.038;
   pointer-events: none;
 }
 
-.gallery-item:hover .gallery-item-overlay {
-  opacity: 1;
+.gallery-chapter-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.gallery-item-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-}
-
-/* Zoom icon on hover */
-.gallery-item-zoom {
+.gallery-chapter-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.06);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
   position: absolute;
-  top: 0.9rem;
-  right: 0.9rem;
-  width: 32px;
-  height: 32px;
+  right: var(--content-pad);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.gallery-chapter-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-chapter-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.gallery-chapter-count {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  align-self: flex-end;
+}
+
+/* ── GALLERY SECTION WRAPPER ─────────────────────────────────── */
+
+.gallery-section {
+  background: var(--forest);
+  padding: 0.5rem var(--content-pad) clamp(1rem, 2vw, 1.5rem);
+}
+
+.gallery-section-inner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+/* ── IMAGE ITEM — shared ─────────────────────────────────────── */
+
+.gi {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+  border-radius: 2px;
+}
+
+.gi img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.65s var(--ease-out),
+    filter    0.4s  var(--ease-out);
+  filter: brightness(0.88) saturate(1.1);
+}
+
+.gi:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.98) saturate(1.2);
+}
+
+/* Zoom icon */
+.gi::after {
+  content: '+';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255,255,255,0.12);
   backdrop-filter: blur(6px);
@@ -227,76 +203,210 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 28px;
+  text-align: center;
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.7);
   transition:
     opacity   0.3s var(--ease-out),
     transform 0.3s var(--ease-out);
   pointer-events: none;
 }
 
-.gallery-item:hover .gallery-item-zoom {
+.gi:hover::after {
   opacity: 1;
   transform: scale(1);
 }
 
-.gallery-item-zoom svg {
-  width: 14px;
-  height: 14px;
-  fill: none;
-  stroke: #fff;
-  stroke-width: 1.8;
-  stroke-linecap: round;
+/* ══════════════════════════════════════════════════════════════
+   BACKWATERS — 5 images
+   Layout:
+   Row 1: [2fr landscape] [1fr portrait]   — heights: 480px
+   Row 2: [full-width panoramic]            — heights: 340px
+   Row 3: [1fr] [1fr]                       — heights: 360px
+══════════════════════════════════════════════════════════════ */
+
+.gallery-grid-backwaters {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 480px 340px 360px;
+  gap: 0.5rem;
 }
 
-/* Empty state */
-.gallery-empty {
-  display: none;
-  text-align: center;
-  padding: 4rem 2rem;
-  color: rgba(255,255,255,0.3);
-  font-size: 0.9rem;
-  font-style: italic;
+.bw-1 { grid-column: 1; grid-row: 1; }
+.bw-2 { grid-column: 2; grid-row: 1; }
+.bw-3 { grid-column: 1 / 3; grid-row: 2; } /* full-width */
+.bw-4 { grid-column: 1; grid-row: 3; }
+.bw-5 { grid-column: 2; grid-row: 3; }
+
+/* ══════════════════════════════════════════════════════════════
+   ROOMS — 5 images
+   Layout:
+   Row 1: [1fr portrait] [2fr landscape]   — heights: 500px
+   Row 2: [1fr] [1fr] [1fr]                — heights: 320px
+══════════════════════════════════════════════════════════════ */
+
+.gallery-grid-rooms {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 500px 320px;
+  gap: 0.5rem;
 }
 
-.gallery-empty.visible {
-  display: block;
+/* Row 2 needs 3 columns — override inner */
+.gallery-grid-rooms-row2 {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  height: 320px;
+}
+
+.rm-1 { grid-column: 1; grid-row: 1; }
+.rm-2 { grid-column: 2; grid-row: 1; }
+
+/* ══════════════════════════════════════════════════════════════
+   FOOD & SPICES — 4 images
+   Layout:
+   Row 1: [3fr large] [1fr small]          — heights: 400px
+   Row 2: [full-width macro]               — heights: 380px
+══════════════════════════════════════════════════════════════ */
+
+.gallery-grid-food {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 400px 380px;
+  gap: 0.5rem;
+}
+
+.fd-1 { grid-column: 1; grid-row: 1; }
+.fd-2 { grid-column: 2; grid-row: 1; }
+.fd-3 { grid-column: 1 / 3; grid-row: 2; } /* full-width */
+
+/* 4th food image — inline in row 2 as overlay caption approach */
+/* We'll place it separately below the grid */
+.fd-4-wrap {
+  margin-top: 0.5rem;
+  height: 300px;
+}
+.fd-4-wrap .gi {
+  height: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EXPERIENCES — 4 images
+   Layout:
+   Row 1: [1fr square] [2fr landscape]     — heights: 440px
+   Row 2: [full-width cinematic]           — heights: 420px
+══════════════════════════════════════════════════════════════ */
+
+.gallery-grid-experiences {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 440px 420px;
+  gap: 0.5rem;
+}
+
+.ex-1 { grid-column: 1; grid-row: 1; }
+.ex-2 { grid-column: 2; grid-row: 1; }
+.ex-3 { grid-column: 1 / 3; grid-row: 2; } /* full-width */
+
+/* 4th experience image — below the main grid */
+.ex-4-wrap {
+  margin-top: 0.5rem;
+  height: 320px;
+}
+.ex-4-wrap .gi {
+  height: 100%;
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
 
-@media (max-width: 1024px) {
-  .gallery-masonry {
-    columns: 3;
+@media (max-width: 900px) {
+
+  .gallery-grid-backwaters {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 240px 260px;
   }
+
+  .gallery-grid-rooms {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 320px 240px;
+  }
+
+  .gallery-grid-food {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 260px;
+  }
+
+  .fd-1 { grid-column: 1; }
+  .fd-2 { grid-column: 2; }
+
+  .gallery-grid-experiences {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 280px;
+  }
+
+  .fd-4-wrap, .ex-4-wrap { height: 220px; }
 }
 
-@media (max-width: 768px) {
-  .gallery-masonry {
-    columns: 2;
+@media (max-width: 600px) {
+
+  .gallery-grid-backwaters {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 260px);
   }
 
-  .gallery-hero-sub {
-    display: none;
+  .bw-1, .bw-2, .bw-3,
+  .bw-4, .bw-5 {
+    grid-column: 1;
+    grid-row: auto;
   }
 
-  .gallery-filter-bar {
-    top: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-masonry {
-    columns: 2;
-    column-gap: 0.5rem;
+  .gallery-grid-rooms {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px 280px;
   }
 
-  .gallery-item {
-    margin-bottom: 0.5rem;
+  .gallery-grid-rooms-row2 {
+    grid-template-columns: 1fr;
+    height: auto;
   }
 
-  .gallery-filter-pill {
-    font-size: 0.62rem;
-    padding: 0.4rem 0.85rem;
+  .gallery-grid-rooms-row2 .gi {
+    height: 260px;
   }
+
+  .rm-1, .rm-2 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .gallery-grid-food {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 260px);
+  }
+
+  .fd-1, .fd-2, .fd-3 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .gallery-grid-experiences {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 260px);
+  }
+
+  .ex-1, .ex-2, .ex-3 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .fd-4-wrap, .ex-4-wrap { height: 240px; }
+
+  .gallery-hero-sub { display: none; }
+
+  .gallery-chapter-num { display: none; }
 }

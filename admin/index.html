@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — Venad House</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+  <!-- Admin styles -->
+  <link rel="stylesheet" href="css/admin-root.css">
+  <link rel="stylesheet" href="css/admin-layout.css">
+  <link rel="stylesheet" href="css/admin-components.css">
+
+  <style>
+    /* ── Login screen ── */
+    #login-screen {
+      min-height: 100vh;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #login-screen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .login-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-brand {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-brand-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--terra);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin: 0 auto 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    .login-brand-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--txt);
+      letter-spacing: -0.02em;
+    }
+
+    .login-brand-sub {
+      font-size: 0.78rem;
+      color: var(--txt-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .login-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .login-sub {
+      font-size: 0.82rem;
+      color: var(--txt-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .login-error {
+      font-size: 0.8rem;
+      color: var(--red);
+      background: var(--red-bg);
+      padding: 0.6rem 0.85rem;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      display: block;
+      min-height: 0;
+    }
+
+    .login-demo-hint {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--txt-muted);
+    }
+
+    .login-demo-hint strong { color: var(--txt-soft); }
+
+    /* ── Admin shell ── */
+    #admin-shell { display: flex; min-height: 100vh; }
+
+    /* ── Shared modal helpers ── */
+    .modal-overlay { pointer-events: none; }
+    .modal-overlay.open { pointer-events: auto; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     LOGIN SCREEN
+══════════════════════════════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="login-brand-icon">VH</div>
+      <div class="login-brand-name">Venad House</div>
+      <span class="login-brand-sub">Admin Dashboard</span>
+    </div>
+
+    <div class="login-title">Sign in</div>
+    <div class="login-sub">Enter your credentials to continue.</div>
+
+    <form id="login-form" novalidate>
+      <div class="stack" style="gap:0.85rem;">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email</label>
+          <input class="form-input" id="login-email" type="email"
+                 placeholder="you@venadhome.com" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <input class="form-input" id="login-password" type="password"
+                 placeholder="••••••••" autocomplete="current-password" required>
+        </div>
+        <span class="login-error" id="login-error"></span>
+        <button type="submit" class="btn btn-primary" style="width:100%;padding:0.75rem;">
+          Sign In
+        </button>
+      </div>
+    </form>
+
+    <div class="login-demo-hint">
+      <strong>Demo credentials:</strong><br>
+      Super Admin: anandhu@venadhome.com / admin123<br>
+      Admin: anan@venadhome.com / admin123<br>
+      Staff: rajan@venadhome.com / staff123
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     ADMIN SHELL
+══════════════════════════════════════════════════════════ -->
+<div id="admin-shell" class="hidden">
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Admin navigation">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-icon">VH</div>
+      <div>
+        <div class="sidebar-brand-name">Venad House</div>
+        <span class="sidebar-brand-sub">Admin</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" id="sidebar-nav" aria-label="Sections"></nav>
+
+    <div class="sidebar-role-section" id="sidebar-user">
+      <div class="sidebar-user-info">
+        <div class="sidebar-avatar" id="sidebar-avatar">?</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-user-name">Loading…</div>
+          <span class="sidebar-user-role" id="sidebar-user-role"></span>
+        </div>
+      </div>
+      <button class="btn-logout" id="btn-logout">Sign Out</button>
+    </div>
+  </aside>
+
+  <!-- Main area -->
+  <div class="main-wrap">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="btn-hamburger" id="btn-hamburger" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+            <rect y="3" width="20" height="2" rx="1"/>
+            <rect y="9" width="20" height="2" rx="1"/>
+            <rect y="15" width="20" height="2" rx="1"/>
+          </svg>
+        </button>
+        <div>
+          <div class="topbar-title" id="topbar-title">Dashboard</div>
+          <div class="topbar-subtitle">Venad House</div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-date" id="topbar-date"></div>
+      </div>
+    </header>
+
+    <!-- Section views rendered here by router.js -->
+    <div id="main-content"></div>
+
+  </div>
+
+</div>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container"></div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     SCRIPTS — order matters
+     db.js must load before auth.js
+     auth.js must load before router.js
+     All section JS loads after router.js
+══════════════════════════════════════════════════════════ -->
+
+<!-- Firebase SDK (loaded as module in firebase-config.js) -->
+<!-- No script tag needed — imported dynamically by db.js and auth.js -->
+
+<script type="module">
+  /* ── Global modal helpers ── */
+  window.openModal = function (id) {
+    const el = document.getElementById(id);
+    if (el) { el.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  };
+
+  window.closeModal = function (id) {
+    const el = document.getElementById(id);
+    if (el) { el.classList.remove('open'); document.body.style.overflow = ''; }
+  };
+
+  /* Close modal on backdrop click */
+  document.addEventListener('click', e => {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  /* Close modal on Escape */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => {
+        m.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  /* ── Load all modules in dependency order ── */
+  await import('./js/db.js');
+  await import('./js/auth.js');
+  await import('./js/router.js');
+  await import('./js/dashboard.js');
+  await import('./js/rooms.js');
+  await import('./js/guests.js');
+  await import('./js/calendar.js');
+  await import('./js/content.js');
+  await import('./js/experiences.js');
+  await import('./js/enquiries.js');
+  await import('./js/users.js');
+</script>
+
+</body>
+</html>
