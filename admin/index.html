@@ -12,9 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 
   <!-- Admin styles -->
-  <link rel="stylesheet" href="css/admin-root.css">
-  <link rel="stylesheet" href="css/admin-layout.css">
-  <link rel="stylesheet" href="css/admin-components.css">
+  <link rel="stylesheet" href="/admin/css/admin-root.css">
+  <link rel="stylesheet" href="/admin/css/admin-layout.css">
+  <link rel="stylesheet" href="/admin/css/admin-components.css">
 
   <style>
     html, body {
@@ -25,7 +25,7 @@
     /* ── Login screen ── */
     #login-screen {
       min-height: 100vh;
-      background: var(--forest);
+      background: #0D1F14;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -63,7 +63,7 @@
     .login-brand-icon {
       width: 48px;
       height: 48px;
-      background: var(--terra);
+      background: #B35528;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -78,13 +78,13 @@
     .login-brand-name {
       font-size: 1.2rem;
       font-weight: 700;
-      color: var(--txt);
+      color: #1A1F1B;
       letter-spacing: -0.02em;
     }
 
     .login-brand-sub {
       font-size: 0.78rem;
-      color: var(--txt-muted);
+      color: #8F9B8D;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       display: block;
@@ -99,14 +99,14 @@
 
     .login-sub {
       font-size: 0.82rem;
-      color: var(--txt-muted);
+      color: #8F9B8D;
       margin-bottom: 1.5rem;
     }
 
     .login-error {
       font-size: 0.8rem;
-      color: var(--red);
-      background: var(--red-bg);
+      color: #EF4444;
+      background: rgba(239, 68, 68, 0.1);
       padding: 0.6rem 0.85rem;
       border-radius: 4px;
       margin-top: 0.5rem;
@@ -117,12 +117,12 @@
     .login-demo-hint {
       margin-top: 1.5rem;
       padding-top: 1.25rem;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid #E2E6E1;
       font-size: 0.75rem;
-      color: var(--txt-muted);
+      color: #8F9B8D;
     }
 
-    .login-demo-hint strong { color: var(--txt-soft); }
+    .login-demo-hint strong { color: #5A6358; }
 
     /* ── Admin shell ── */
     #admin-shell { display: flex; min-height: 100vh; }
@@ -284,17 +284,17 @@
   });
 
   /* ── Load all modules in dependency order ── */
-  await import('./js/db.js');
-  await import('./js/auth.js');
-  await import('./js/router.js');
-  await import('./js/dashboard.js');
-  await import('./js/rooms.js');
-  await import('./js/guests.js');
-  await import('./js/calendar.js');
-  await import('./js/content.js');
-  await import('./js/experiences.js');
-  await import('./js/enquiries.js');
-  await import('./js/users.js');
+  await import('/admin/js/db.js');
+  await import('/admin/js/auth.js');
+  await import('/admin/js/router.js');
+  await import('/admin/js/dashboard.js');
+  await import('/admin/js/rooms.js');
+  await import('/admin/js/guests.js');
+  await import('/admin/js/calendar.js');
+  await import('/admin/js/content.js');
+  await import('/admin/js/experiences.js');
+  await import('/admin/js/enquiries.js');
+  await import('/admin/js/users.js');
 </script>
 
 </body>
