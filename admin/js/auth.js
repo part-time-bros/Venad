@@ -11,7 +11,7 @@ let fbAuth, fbSignIn, fbSignOut, fbOnAuthStateChanged;
 
 async function initAuth() {
   if (!USE_FIREBASE_AUTH) return;
-  const app  = await import('./firebase-config.js');
+  const app  = await import('/admin/js/firebase-config.js');
   const mod  = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js');
   fbAuth               = app.auth;
   fbSignIn             = mod.signInWithEmailAndPassword;

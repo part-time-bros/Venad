@@ -15,7 +15,7 @@ let fsDB, fsDoc, fsCollection, fsGetDoc, fsSetDoc, fsUpdateDoc,
 
 async function initFirebase() {
   if (!USE_FIREBASE) return;
-  const app   = await import('./firebase-config.js');
+  const app   = await import('/admin/js/firebase-config.js');
   const store = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js');
   fsDB              = app.db;
   fsDoc             = store.doc;
